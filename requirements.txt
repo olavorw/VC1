@@ -7,6 +7,4 @@ mutagen
 soundfile
 requests
 asyncio
-json
-time
-os
+pygame

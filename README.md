@@ -4,7 +4,7 @@ This project is a voice changer application that utilizes advanced speech recogn
 
 ## Agreements
 
-Please read LICENSE.md and EULA.txt and agree to both before proceeding. By downloading this software, you agree to the EULA.txt and LICENSE.md files.
+Please take notice to the EULA and License before installation. By installing this software, you agree to both.
 
 ## Installation
 
