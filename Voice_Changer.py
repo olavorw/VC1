@@ -8,24 +8,30 @@ from rich import print
 config = Config()
 
 while True:
-    agreement = input("To continue, please read the EULA.txt and agree to proceed. Do you agree to the EULA? Yes/No:")
-    if agreement == "Yes":
-        print("[green]Proceeding...")
-        break
-    if agreement == "No":
-        print("[red]Exiting...")
-        exit()
-while True:
-    dontAskAgain = input("Don't ask again? Remember, by using this software you agree to the EULA. Yes/No:")
-    if dontAskAgain == "Yes":
-        print("[green]You will not be asked again. To reset this setting, change it in the config.json file.")
-        config.dont_ask_again(True)
-        break
-    if dontAskAgain == "No":
-        print("[green]Understood.")
+    if config.get_dont_ask_again():
         break
     else:
-        print("[red]Invalid input. Please enter 'Yes' or 'No'.")
+        agreement = input("To continue, please read the EULA.txt and agree to proceed. Do you agree to the EULA? Yes/No: ")
+        if agreement == "Yes":
+            print("[green]Proceeding...")
+            break
+        if agreement == "No":
+            print("[red]Exiting...")
+            exit()
+while True:
+    if config.get_dont_ask_again():
+        break
+    else:
+        dontAskAgain = input("Don't ask again? Remember, by using this software you agree to the EULA. Yes/No: ")
+        if dontAskAgain == "Yes":
+            print("[green]You will not be asked again. To reset this setting, change it in the config.json file.")
+            config.dont_ask_again(True)
+            break
+        if dontAskAgain == "No":
+            print("[green]Understood.")
+            break
+        else:
+            print("[red]Invalid input. Please enter 'Yes' or 'No'.")
 #Get the API key from the user
 api_key = config.get_api_key()
 
@@ -46,4 +52,4 @@ while True:
     file = elevenlabs.get_audio(result, voice_id, api_key)
     
     # Play the generated audio using AudioManager
-    audiomanager.play_audio(file, True, True, True)
+    audiomanager.play_audio(file)

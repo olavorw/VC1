@@ -1,5 +1,7 @@
 import pygame
 from rich import print
+import os
+import time
 
 class audio_player:
     @staticmethod
@@ -19,9 +21,16 @@ class audio_player:
         while pygame.mixer.music.get_busy():
             pygame.time.Clock().tick(10)
             
-            
-        print("[green]Playback finished, Continuing voice recognition[/green]")
+        #Stop playback and unload the mixer
+        pygame.mixer.music.stop()
+        pygame.mixer.quit()
         
+        #Delete the audio file
+        try:
+            print("[green]Audio file deleted, continuing recognition[/green]")
+            os.remove(file_path)
+        except PermissionError:
+            print("[red]Error deleting audio file. Please delete the file manually.[/red]")
 #Tests
 if __name__ == "__main__":
     audio_player.play_audio("test.mp3")

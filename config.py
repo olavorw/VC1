@@ -38,6 +38,23 @@ class Config:
             # If the file does not exist, create it with the default configuration.
             with open(config_path, 'w') as file:
                 json.dump({'dont_ask_again': value}, file)
+    @staticmethod
+    def get_dont_ask_again():
+        if not os.path.exists('config.json'):
+            Config.dont_ask_again(False)
+        with open('config.json', 'r') as file:
+            try:
+                config = json.load(file)
+                dont_ask_again = config.get('dont_ask_again')
+                if dont_ask_again is None:
+                    print("Configuration not found in config.json.")
+                    Config.dont_ask_again(False)
+                    return Config.get_dont_ask_again()
+                return dont_ask_again
+            except json.JSONDecodeError:
+                print("Error reading the config file. It might be corrupted.")
+                os.remove('config.json')
+                return Config.get_dont_ask_again()
 
 if __name__ == "__main__":
     api_key = Config.get_api_key()
