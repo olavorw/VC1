@@ -1,7 +1,6 @@
 import pygame
 from rich import print
 import os
-import time
 
 class audio_player:
     @staticmethod
