@@ -1,0 +1,12 @@
+speechrecognition
+rich
+pyaudio
+auto-py-to-exe
+pygame-ce
+mutagen
+soundfile
+requests
+asyncio
+json
+time
+os
