@@ -1,15 +1,32 @@
-from eleven_labs import ElevenLabsSpeech
+from elevenlabs_handler import ElevenLabsSpeech
 from audio_player_main import audio_player
-from speech_recognizer import SpeechRecognition
-from config import Config
+from speech_to_text_handler import SpeechRecognition
+from configuration_handler import Config
 
+# Import necessary modules
+
+# Initialize the Config object
 config = Config()
+
+# Prompt the user to accept the EULA
 config.prompt_eula()
+
+# Initialize the ElevenLabsSpeech object
 elevenlabs = ElevenLabsSpeech()
+
+# Get the API key from the config
 api_key = config.call_api_key()
+
+# Initialize the audio player
 audiomanager = audio_player()
+
+# Initialize the SpeechRecognition object
 speech = SpeechRecognition()
+
+# Ask the user for their ElevenLabs voice ID
 voice_id = input("Enter your ElevenLabs voice ID: ")
+
+# Main loop
 while True:
     # Get the recognized speech from the microphone using SpeechRecognition
     result = speech.listen_and_recognize()
