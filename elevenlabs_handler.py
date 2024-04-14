@@ -1,6 +1,6 @@
 import requests
 
-class ElevenLabsSpeech:
+class ElevenLabsHandler:
 
   @staticmethod
   # Define a method to get audio from the ElevenLabs API

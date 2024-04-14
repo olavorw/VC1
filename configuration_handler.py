@@ -3,7 +3,7 @@ import os
 import time
 from rich import print
 
-class Config:
+class ConfigurationHandler:
     @staticmethod
     def prompt_eula():
         print("[yellow]By using this software, you agree to the EULA provided in the main directory.[/yellow]")
@@ -39,5 +39,5 @@ class Config:
         return api_key
 
 if __name__ == "__main__":
-    api_key = Config.get_api_key()
+    api_key = ConfigurationHandler.get_api_key()
     print("Your ElevenLabs API key is:", api_key)

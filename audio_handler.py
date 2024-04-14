@@ -2,7 +2,7 @@ import pygame
 from rich import print
 import os
 
-class audio_player:
+class AudioHandler:
     @staticmethod
     def play_audio(file_path):
         
@@ -32,4 +32,4 @@ class audio_player:
             print("[red]Error deleting audio file. Please delete the file manually.[/red]")
 #Tests
 if __name__ == "__main__":
-    audio_player.play_audio("test.mp3")
+    AudioHandler.play_audio("test.mp3")

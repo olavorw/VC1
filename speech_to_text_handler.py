@@ -1,6 +1,6 @@
 import speech_recognition as sr
 
-class SpeechRecognition:
+class SpeechToTextHandler:
     @staticmethod
     def listen_and_recognize():
         # Initialize recognizer class (for recognizing the speech)
@@ -30,6 +30,6 @@ class SpeechRecognition:
 
 # TESTS
 if __name__ == '__main__':
-    speech = SpeechRecognition()
+    speech = SpeechToTextHandler()
     result = speech.listen_and_recognize()
     print(f"Final recognized text: {result}")
