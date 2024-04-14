@@ -2,6 +2,7 @@ from elevenlabs_handler import ElevenLabsHandler
 from audio_handler import AudioHandler
 from speech_to_text_handler import SpeechToTextHandler
 from configuration_handler import ConfigurationHandler
+from rich import print
 
 # Import necessary modules
 
@@ -24,7 +25,8 @@ audiomanager = AudioHandler()
 speech = SpeechToTextHandler()
 
 # Ask the user for their ElevenLabs voice ID
-voice_id = input("Enter your ElevenLabs voice ID: ")
+print("[yellow]Please enter your ElevenLabs voice ID: ")
+voice_id = input()
 
 # Main loop
 while True:
