@@ -32,7 +32,7 @@ while True:
     result = speech.listen_and_recognize()
     
     # Get the audio for the specified voice ID using ElevenLabsSpeech
-    file = elevenlabs.get_audio(result, voice_id, api_key)
+    audio_file = elevenlabs.get_audio(result, voice_id, api_key)
     
     # Play the generated audio using AudioManager
-    audiomanager.play_audio(file)
+    audiomanager.play_audio(audio_file)
