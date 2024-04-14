@@ -25,7 +25,7 @@ class ElevenLabsSpeech:
             "similarity_boost": 1
         }
     }
-    
+  
     # Make a POST request to the API
     response = requests.post(url, json=data, headers=headers)
     file_name = "LatestSound" + '.mp3'

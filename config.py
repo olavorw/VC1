@@ -1,60 +1,42 @@
 import json
 import os
+import time
+from rich import print
 
 class Config:
     @staticmethod
-    def setup_api_key():
-        api_key = input("Enter your ElevenLabs API Key: ")
-        with open('config.json', 'w') as file:
-            json.dump({'elevenlabs_api_key': api_key}, file)
-
-    @staticmethod
-    def get_api_key():
-        if not os.path.exists('config.json'):
-            Config.setup_api_key()
-        with open('config.json', 'r') as file:
-            try:
-                config = json.load(file)
-                api_key = config.get('elevenlabs_api_key')
-                if not api_key:
-                    print("API key not found in config.json.")
-                    Config.setup_api_key()
-                    return Config.get_api_key()
-                return api_key
-            except json.JSONDecodeError:
-                print("Error reading the config file. It might be corrupted.")
-                os.remove('config.json')
-                return Config.get_api_key()
-    @staticmethod
-    def dont_ask_again(value):
-        config_path = 'config.json'
-        if os.path.exists(config_path):
-            with open(config_path, 'r') as file:
-                config = json.load(file)
-            config['dont_ask_again'] = value
-            with open(config_path, 'w') as file:
-                json.dump(config, file)
+    def prompt_eula():
+        print("[yellow]By using this software, you agree to the EULA provided in the main directory.[/yellow]")
+        print("[yellow]Do you agree to the EULA? (yes/no)")
+        response = input()
+        if response == "yes":
+            with open('config.json', 'w') as file:
+                json.dump({'eula': "true"}, file)
+            print("[green]EULA accepted.[/green]")
+            print("[green]Don't show again? You can always change this by deleting the config.json file in the main directory. (yes/no)[/green]")
+            dontShowAgain = input()
+            if dontShowAgain == "yes":
+                with open('config.json', 'w') as file:
+                    json.dump({'eula': "true", 'dontShowAgain': "true"}, file)
+                print("[green]EULA will not be shown again. Reminder: You are still binded to the EULA by using this software. To reset this, delete config.json in the main directory.[/green]")
+            else:
+                with open('config.json', 'w') as file:
+                    json.dump({'eula': "true"}, file)
+                print("[green]EULA will be shown again.[/green]")
+            return
         else:
-            # If the file does not exist, create it with the default configuration.
-            with open(config_path, 'w') as file:
-                json.dump({'dont_ask_again': value}, file)
+            print("[red]You must agree to the EULA to use this software.[/red]")
+            print("[red]Closing Program in 3 seconds.[/red]")
+            time.sleep(3)
+            exit()
     @staticmethod
-    def get_dont_ask_again():
-        if not os.path.exists('config.json'):
-            Config.dont_ask_again(False)
-        with open('config.json', 'r') as file:
-            try:
-                config = json.load(file)
-                dont_ask_again = config.get('dont_ask_again')
-                if dont_ask_again is None:
-                    print("Configuration not found in config.json.")
-                    Config.dont_ask_again(False)
-                    return Config.get_dont_ask_again()
-                return dont_ask_again
-            except json.JSONDecodeError:
-                print("Error reading the config file. It might be corrupted.")
-                os.remove('config.json')
-                return Config.get_dont_ask_again()
+    def call_api_key():
+        print("[yellow]Please enter your ElevenLabs API key:[/yellow]")
+        api_key = input()
+        with open('config.json', 'w') as file:
+            json.dump({'api_key': api_key}, file)
+        print("[green]API key saved successfully.[/green]")
+        return api_key
 
 if __name__ == "__main__":
     api_key = Config.get_api_key()
