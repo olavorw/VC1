@@ -23,3 +23,8 @@ print("[cyan]Cyan text")
 print("[white]White text")
 print("[black on white]Black text on white background")
 print("[white on black]White text on black background")
+
+# You can also combine styles
+# You can also use hex codes
+
+print("[#FF0000]Red text")

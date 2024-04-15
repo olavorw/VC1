@@ -17,9 +17,9 @@ This software was developed and is intended for use on Windows machines. This wa
 ## Installation
 
 To install, you may watch my [video guide](https://olanorw.media/vc1install) or follow these three steps:
-1. Extract the file
-2. Launch the program
-3. Follow instructions
+    1. Extract the file
+    2. Launch the program
+    3. Follow instructions
 
 ```md
 VVVVVVVV           VVVVVVVV         CCCCCCCCCCCCC      1111111111   

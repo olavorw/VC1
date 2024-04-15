@@ -57,7 +57,7 @@ class ConfigurationHandler:
         print("[yellow]Please enter your ElevenLabs API key:[/yellow]")
         api_key = input()
         ConfigurationHandler.write_config({'api_key': api_key})
-        print("[green]API key saved successfully.[/green]")
+        print("[green]API key saved successfully. To change your API key, delete the config.json file.[/green]")
         return api_key
 
     @staticmethod
@@ -77,7 +77,8 @@ class ConfigurationHandler:
             print("[green]Voice ID(s) retrieved. Please select a voice by name. To add a new voice, type 'new'.[green]")
             for name, id in voice_ids.items():
                 print(f"Name: {name}, Voice ID: {id}")
-            selection = input("Enter a name or type 'new' to add a new voice ID: ")
+            print("[yellow]Enter a name or type 'new' to add a new voice ID:")
+            selection = input()
             if selection != "new":
                 return voice_ids.get(selection, "No such voice ID found.")
         else:

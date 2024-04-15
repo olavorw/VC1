@@ -2,7 +2,7 @@
 This End User License Agreement ("Agreement") is a legal agreement between you (either an individual or a single entity) and Olanorw/Software Provider ("Company", "we", "us", or "our") for the software product identified above, which includes computer software and may include associated media, printed materials, and "online" or electronic documentation ("Software").
 
 ## 2. Agreement
-By installing, copying, or otherwise using the Software, you agree to be bound by the terms of this Agreement, ElevenLabs Agreements, Google Cloud Agreements, the README.md file, the LICENCE.md file. If you do not agree to the terms of this Agreement, do not install or use the Software. When saying yes to the "Don't show again?" option when the program is launched, you still binded to this EULA.
+By installing, copying, or otherwise using the Software, you agree to be bound by the terms of this Agreement, ElevenLabs policies, Google Cloud policies, the README.md file, the LICENCE.md file. If you do not agree to the terms of this Agreement, do not install or use the Software. When saying yes to the "Don't show again?" option when the program is launched, you still binded to this EULA.
 
 ## 3. Grant of License
     1. The Software is licensed, not sold. This Agreement grants you the following rights:

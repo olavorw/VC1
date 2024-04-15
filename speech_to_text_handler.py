@@ -21,7 +21,7 @@ class SpeechToTextHandler:
                     text = r.recognize_google(audio)
                     # If some text was recognized, break the loop
                     if text:  
-                        print("[blue]RECOGNIZED: " + text)
+                        print("[blue]Recieved: " + text)
                         return text  # Return text immediately after recognition
                 # Handle exceptions
                 except sr.UnknownValueError:
