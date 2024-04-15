@@ -4,29 +4,27 @@ from speech_to_text_handler import SpeechToTextHandler
 from configuration_handler import ConfigurationHandler
 from rich import print
 
-# Import necessary modules
-
-# Initialize the Config object
-config = ConfigurationHandler()
-
 # Prompt the user to accept the EULA
-config.prompt_eula()
+ConfigurationHandler.prompt_eula()
 
 # Initialize the ElevenLabsSpeech object
 elevenlabs = ElevenLabsHandler()
 
-# Get the API key from the config
-api_key = config.call_api_key()
+# Get or prompt for the API key
+api_key = ConfigurationHandler.get_api_key()
+if not api_key:
+    api_key = ConfigurationHandler.prompt_api_key()
 
 # Initialize the audio player
-audiomanager = AudioHandler()
+audio = AudioHandler()
 
 # Initialize the SpeechRecognition object
 speech = SpeechToTextHandler()
 
 # Ask the user for their ElevenLabs voice ID
-print("[yellow]Please enter your ElevenLabs voice ID: ")
-voice_id = input()
+print("[yellow]Please enter your ElevenLabs voice ID:[/yellow]")
+voice_id = ConfigurationHandler.prompt_voice_id()
+print(f"[green]Selected Voice ID: {voice_id}.[/green]")
 
 # Main loop
 while True:
@@ -36,5 +34,5 @@ while True:
     # Get the audio for the specified voice ID using ElevenLabsSpeech
     audio_file = elevenlabs.get_audio(result, voice_id, api_key)
     
-    # Play the generated audio using AudioManager
-    audiomanager.play_audio(audio_file)
+    # Play the generated audio using AudioHandler
+    audio.play_audio(audio_file)
