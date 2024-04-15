@@ -1,4 +1,5 @@
 import speech_recognition as sr
+from rich import print
 
 class SpeechToTextHandler:
     @staticmethod
@@ -10,7 +11,7 @@ class SpeechToTextHandler:
         while True:  
             # Use the microphone as source for input. Here we are using sr.Microphone() as source
             with sr.Microphone() as source:
-                print("Listening...")
+                print("[cyan]Listening...")
                 # Adjust the recognizer sensitivity to ambient noise and record audio from the microphone
                 r.adjust_for_ambient_noise(source, duration=0.5)
                 audio = r.listen(source)
@@ -20,7 +21,7 @@ class SpeechToTextHandler:
                     text = r.recognize_google(audio)
                     # If some text was recognized, break the loop
                     if text:  
-                        print("RECOGNIZED: " + text)
+                        print("[blue]RECOGNIZED: " + text)
                         return text  # Return text immediately after recognition
                 # Handle exceptions
                 except sr.UnknownValueError:
