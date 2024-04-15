@@ -22,6 +22,10 @@
    "value": "C:/Users/olavs/OneDrive/Documents/GitHub/voicechanger/vc1.ico"
   },
   {
+   "optionDest": "name",
+   "value": "Voice Changer"
+  },
+  {
    "optionDest": "clean_build",
    "value": false
   },
@@ -56,6 +60,18 @@
   {
    "optionDest": "hiddenimports",
    "value": "pyaudio"
+  },
+  {
+   "optionDest": "datas",
+   "value": "C:/Users/olavs/OneDrive/Documents/GitHub/voicechanger/EULA.md;."
+  },
+  {
+   "optionDest": "datas",
+   "value": "C:/Users/olavs/OneDrive/Documents/GitHub/voicechanger/LICENSE.md;."
+  },
+  {
+   "optionDest": "datas",
+   "value": "C:/Users/olavs/OneDrive/Documents/GitHub/voicechanger/README.md;."
   }
  ],
  "nonPyinstallerOptions": {
