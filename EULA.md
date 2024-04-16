@@ -8,6 +8,7 @@ By installing, copying, or otherwise using the Software, you agree to be bound b
     1. The Software is licensed, not sold. This Agreement grants you the following rights:
     2. Installation and Use: You may install and use one copy of the Software on a single computer.
     3. Backup Copies: You may make copies of the Software for backup and archival purposes.
+    For more information, read the full LICENSE.md file.
 
 ## 4. Restrictions
     1. You may not:
