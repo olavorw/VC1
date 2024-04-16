@@ -12,7 +12,7 @@ If you have any questions or feel you need to reach out to me for any reason, do
 
 ## Prerequisites
 
-This software was developed and is intended for use on Windows machines. This was developed in Windows 11 in VSCode. It should work on Windows 10, if not, reach out to me. You will also need an ElevenLabs API key. [Elevenlabs](https://elevenlabs.io) is a paid service used to make the voices. You will also need a voice ID from ElevenLabs. You can get avoice from their voice library, or make your own.
+This software was developed and is intended for use on Windows machines. This was developed in Windows 11 in VSCode. It should work on Windows 10, if not, reach out to me. You will also need an ElevenLabs API key. [Elevenlabs](https://elevenlabs.io) is a paid service used to make the voices. You will also need a voice ID from ElevenLabs. You can get avoice from their voice library, or make your own. The most important part after all this is that you need [VBCable](https://vb-audio.com/Cable/) for the actual voice changing function. You can hear the audio and everything without it but to turn it into a microphone you need to download [VBCable](https://vb-audio.com/Cable/). I am working on my own virtual microphone at the moment, but in the meanwhile, you will need to use [VBCable](https://vb-audio.com/Cable/).
 
 ## Installation
 
