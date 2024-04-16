@@ -8,4 +8,3 @@ soundfile
 requests
 asyncio
 pygame
-wave
