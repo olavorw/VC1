@@ -14,7 +14,7 @@ elevenlabs = ElevenLabsHandler()
 api_key = ConfigurationHandler.get_api_key()
 if not api_key:
     api_key = ConfigurationHandler.prompt_api_key()
-
+    
 # Initialize the audio player
 audio = AudioHandler()
 
@@ -26,8 +26,8 @@ print("[yellow]Please enter your ElevenLabs voice ID:[/yellow]")
 voice_id = ConfigurationHandler.prompt_voice_id()
 print(f"[green]Selected Voice ID: {voice_id}.[/green]")
 
-# Main loop
 while True:
+    
     # Get the recognized speech from the microphone using SpeechRecognition
     result = speech.listen_and_recognize()
     
