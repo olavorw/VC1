@@ -9,8 +9,7 @@ SCREEN_HEIGHT = 900
 
 screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 pygame.display.set_caption('VC1')
-icon_path = os.path("vc1.ico")
-icon_image = pygame.image.load(icon_path)
+icon_image = pygame.image.load('vc1.ico')
 pygame.display.set_icon(icon_image)
 
 font = pygame.font.SysFont("Tw Cen MT Condensed Extra Bold", 40)
