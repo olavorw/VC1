@@ -21,7 +21,7 @@ def draw_text(text, font, text_col, x, y):
     img = font.render(text, True, text_col)
     screen.blit(img, (x, y))
     
-background = pygame.image.load('bg.png')
+background = pygame.image.load('gui/bg.png')
     
 run = True
 while run:
