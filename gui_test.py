@@ -21,12 +21,14 @@ def draw_text(text, font, text_col, x, y):
     img = font.render(text, True, text_col)
     screen.blit(img, (x, y))
     
+background = pygame.image.load('bg.png')
+    
 run = True
 while run:
         
-        screen.fill((52, 78, 91))
+        screen.blit(background, (0, 0))
         
-        draw_text(version, release, TEXT_COL, 0, 0)
+        draw_text(version, release, TEXT_COL, 0, 890)
         
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
