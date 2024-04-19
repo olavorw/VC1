@@ -25,7 +25,7 @@ class SpeechToTextHandler:
                         return text  # Return text immediately after recognition
                 # Handle exceptions
                 except sr.UnknownValueError:
-                    print("Google Speech Recognition could not understand audio, please try again...")
+                    print("[yellow]Google Speech Recognition could not understand audio, please try again...")
                 except sr.RequestError as e:
                     print(f"Could not request results from Google Speech Recognition service; {e}")
 
