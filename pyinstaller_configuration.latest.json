@@ -1,0 +1,85 @@
+{
+ "version": "auto-py-to-exe-configuration_v1",
+ "pyinstallerOptions": [
+  {
+   "optionDest": "noconfirm",
+   "value": true
+  },
+  {
+   "optionDest": "filenames",
+   "value": "C:/Users/olavs/OneDrive/Documents/Programming/voicechanger/main.py"
+  },
+  {
+   "optionDest": "onefile",
+   "value": false
+  },
+  {
+   "optionDest": "console",
+   "value": true
+  },
+  {
+   "optionDest": "icon_file",
+   "value": "C:/Users/olavs/OneDrive/Documents/Programming/voicechanger/assets/logo/VC1.ico"
+  },
+  {
+   "optionDest": "name",
+   "value": "VC1"
+  },
+  {
+   "optionDest": "clean_build",
+   "value": false
+  },
+  {
+   "optionDest": "strip",
+   "value": false
+  },
+  {
+   "optionDest": "noupx",
+   "value": false
+  },
+  {
+   "optionDest": "disable_windowed_traceback",
+   "value": false
+  },
+  {
+   "optionDest": "uac_admin",
+   "value": false
+  },
+  {
+   "optionDest": "uac_uiaccess",
+   "value": false
+  },
+  {
+   "optionDest": "argv_emulation",
+   "value": false
+  },
+  {
+   "optionDest": "bootloader_ignore_signals",
+   "value": false
+  },
+  {
+   "optionDest": "datas",
+   "value": "C:/Users/olavs/OneDrive/Documents/Programming/voicechanger/archived/EULA.md;."
+  },
+  {
+   "optionDest": "datas",
+   "value": "C:/Users/olavs/OneDrive/Documents/Programming/voicechanger/CODE_OF_CONDUCT.md;."
+  },
+  {
+   "optionDest": "datas",
+   "value": "C:/Users/olavs/OneDrive/Documents/Programming/voicechanger/LICENSE.md;."
+  },
+  {
+   "optionDest": "datas",
+   "value": "C:/Users/olavs/OneDrive/Documents/Programming/voicechanger/README.md;."
+  },
+  {
+   "optionDest": "datas",
+   "value": "C:/Users/olavs/OneDrive/Documents/Programming/voicechanger/test.mp3;."
+  }
+ ],
+ "nonPyinstallerOptions": {
+  "increaseRecursionLimit": true,
+  "manualArguments": ""
+ }
+}
