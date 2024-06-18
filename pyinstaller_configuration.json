@@ -7,7 +7,7 @@
   },
   {
    "optionDest": "filenames",
-   "value": "C:/Users/olavs/OneDrive/Documents/GitHub/voicechanger/main.py"
+   "value": "C:/Users/olavs/OneDrive/Documents/Programming/voicechanger/main.py"
   },
   {
    "optionDest": "onefile",
@@ -19,11 +19,11 @@
   },
   {
    "optionDest": "icon_file",
-   "value": "C:/Users/olavs/OneDrive/Documents/GitHub/voicechanger/assets/logo/vc1.ico"
+   "value": "C:/Users/olavs/OneDrive/Documents/Programming/voicechanger/assets/logo/VC1.ico"
   },
   {
    "optionDest": "name",
-   "value": "Voice Changer"
+   "value": "VC1"
   },
   {
    "optionDest": "clean_build",
@@ -58,20 +58,24 @@
    "value": false
   },
   {
-   "optionDest": "hiddenimports",
-   "value": "pyaudio"
+   "optionDest": "datas",
+   "value": "C:/Users/olavs/OneDrive/Documents/Programming/voicechanger/archived/EULA.md;."
   },
   {
    "optionDest": "datas",
-   "value": "C:/Users/olavs/OneDrive/Documents/GitHub/voicechanger/code_of_conduct.md;."
+   "value": "C:/Users/olavs/OneDrive/Documents/Programming/voicechanger/CODE_OF_CONDUCT.md;."
   },
   {
    "optionDest": "datas",
-   "value": "C:/Users/olavs/OneDrive/Documents/GitHub/voicechanger/LICENSE.md;."
+   "value": "C:/Users/olavs/OneDrive/Documents/Programming/voicechanger/LICENSE.md;."
   },
   {
    "optionDest": "datas",
-   "value": "C:/Users/olavs/OneDrive/Documents/GitHub/voicechanger/README.md;."
+   "value": "C:/Users/olavs/OneDrive/Documents/Programming/voicechanger/README.md;."
+  },
+  {
+   "optionDest": "datas",
+   "value": "C:/Users/olavs/OneDrive/Documents/Programming/voicechanger/test.mp3;."
   }
  ],
  "nonPyinstallerOptions": {
