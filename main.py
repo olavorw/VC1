@@ -2,10 +2,15 @@ from elevenlabs_handler import ElevenLabsHandler
 from audio_handler import AudioHandler
 from speech_to_text_handler import SpeechToTextHandler
 from configuration_handler import ConfigurationHandler
+from updater import Updater
 from rich import print
 
 # Prompt the user to accept the EULA
 ConfigurationHandler.prompt_eula()
+
+current_version = '0.42'
+
+Updater.check_for_updates(current_version)
 
 # Initialize the ElevenLabsSpeech object
 elevenlabs = ElevenLabsHandler()
