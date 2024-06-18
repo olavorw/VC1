@@ -21,21 +21,21 @@ To install, you may watch my [video guide](https://olanorw.media/vc1install) or 
     2. Launch the program
     3. Follow instructions
 
-```md
-VVVVVVVV           VVVVVVVV         CCCCCCCCCCCCC      1111111111   
-V::::::V           V::::::V      CCC::::::::::::C     1:::::::::1   
-V::::::V           V::::::V    CC:::::::::::::::C    1::::::::::1   
-V::::::V           V::::::V   C:::::CCCCCCCC::::C    111::::::::1   
- V:::::V           V:::::V   C:::::C       CCCCCC       1:::::::1   
-  V:::::V         V:::::V   C:::::C                     1:::::::1   
-   V:::::V       V:::::V    C:::::C                     1:::::::1   
-    V:::::V     V:::::V     C:::::C                     1:::::::l   
-     V:::::V   V:::::V      C:::::C                     1:::::::l   
-      V:::::V V:::::V       C:::::C                     1:::::::l   
-       V:::::V:::::V        C:::::C                     1:::::::l   
-        V:::::::::V          C:::::C       CCCCCC       1:::::::l   
-         V:::::::V            C:::::CCCCCCCC::::C    111:::::::::111
-          V:::::V              CC:::::::::::::::C    1:::::::::::::1
-           V:::V                 CCC::::::::::::C    1:::::::::::::1
-            VVV                     CCCCCCCCCCCCC    111111111111111
+```md 
+VVVVVVVV           VVVVVVVV          CCCCCCCCCCCCCCC      11111111111   
+V::::::V           V::::::V       CCC::::::::::::::C     1::::::::::1   
+V::::::V           V::::::V     CC:::::::::::::::::C    1:::::::::::1   
+V::::::V           V::::::V    C::::::CCCCCCCCC::::C   11111::::::::1   
+ V:::::V           V:::::V    C::::::C       CCCCCCC       1::::::::1   
+  V:::::V         V:::::V    C::::::C                      1::::::::1   
+   V:::::V       V:::::V     C::::::C                      1::::::::1   
+    V:::::V     V:::::V      C::::::C                      1::::::::l   
+     V:::::V   V:::::V       C::::::C                      1::::::::l   
+      V:::::V V:::::V        C::::::C                      1::::::::l   
+       V:::::V:::::V         C::::::C                      1::::::::l   
+        V:::::::::V           C::::::C       CCCCCCC       1::::::::l   
+         V:::::::V             C::::::CCCCCCCCC::::C    111::::::::::111
+          V:::::V               CC:::::::::::::::::C    1::::::::::::::1
+           V:::V                  CCC::::::::::::::C    1::::::::::::::1
+            VVV                      CCCCCCCCCCCCCCC    1111111111111111
 ```
