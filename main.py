@@ -4,6 +4,11 @@ from speech_to_text_handler import SpeechToTextHandler
 from configuration_handler import ConfigurationHandler
 from updater import Updater
 from rich import print
+import elevate
+import os
+
+if not elevate.is_admin():
+    elevate.elevate(show_console=True)
 
 # Prompt the user to accept the EULA
 ConfigurationHandler.prompt_eula()

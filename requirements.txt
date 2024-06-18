@@ -8,3 +8,4 @@ soundfile
 requests
 asyncio
 pygame
+elevate
