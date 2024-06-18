@@ -28,8 +28,15 @@ class ConfigurationHandler:
             print("[green]EULA has already been accepted and will not be shown again. You are still bound to the EULA when using this software.[/green]")
             return
 
-        print("[yellow]By using this software, you agree to the EULA provided in the main directory.[/yellow]")
-        print("[yellow]Do you agree to the EULA? (yes/no)")
+        print("[yellow]By using this software, you agree to the End User License Agreement or EULA in the 'CODE_OF_CONDUCT.md' file.[/yellow]")
+        print("[yellow]Would you like to see a copy of the EULA here? (yes/no)[/yellow]")
+        viewEULA = input().strip().lower()
+        if viewEULA == "yes":
+            with open('code_of_conduct.md', 'r') as file:
+                print(file.read())
+        print("\n[yellow]Please wait...[/yellow]\n")
+        time.sleep(3)
+        print("[yellow]Have you read and agreed to the EULA? (yes/no)")
         response = input().strip().lower()
         if response == "yes":
             config['eula'] = "true"
