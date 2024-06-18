@@ -115,7 +115,7 @@ class ConfigurationHandler:
         else:
             print("[red]Invalid option.[/red]")
             print("[yellow]Returning.[/yellow]")
-            return "Invalid selection"
+            ConfigurationHandler.prompt_voice_id()
     
 
 if __name__ == "__main__":
