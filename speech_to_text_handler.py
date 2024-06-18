@@ -11,9 +11,10 @@ class SpeechToTextHandler:
         while True:  
             # Use the microphone as source for input. Here we are using sr.Microphone() as source
             with sr.Microphone() as source:
-                print("[cyan]Listening...")
+                print("[cyan]Adjusting...")
                 # Adjust the recognizer sensitivity to ambient noise and record audio from the microphone
                 r.adjust_for_ambient_noise(source, duration=0.5)
+                print("[cyan]Listening...")
                 audio = r.listen(source)
                 text = None  # Initialize text variable to handle scope issues.
                 try:
