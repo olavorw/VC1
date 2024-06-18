@@ -1,11 +1,12 @@
 import requests
 from rich import print
+import time
 
 class ElevenLabsHandler:
 
   @staticmethod
   # Define a method to get audio from the ElevenLabs API
-  def get_audio(text, voice, key):
+  def get_audio(text, voice, api_key):
     # Set the chunk size for downloading the audio file
     CHUNK_SIZE = 1024
     url = "https://api.elevenlabs.io/v1/text-to-speech/" + voice
@@ -14,7 +15,7 @@ class ElevenLabsHandler:
     headers = {
         "Accept": "audio/mpeg",
         "Content-Type": "application/json",
-        "xi-api-key": key
+        "xi-api-key": api_key
     }
 
     # Set the data for the API request
@@ -26,10 +27,11 @@ class ElevenLabsHandler:
             "similarity_boost": 1
         }
     }
-    print("[yellow]Requesting audio file...[/yellow]")
+    print("[yellow]Making a POST request to the ElevenLabs API..[/yellow]")
     # Make a POST request to the API
     response = requests.post(url, json=data, headers=headers)
-    file_name = "LatestSound" + '.mp3'
+    timestamp = str(int(time.time()))
+    file_name = timestamp + '.mp3'
     with open(file_name, 'wb') as f:
         for chunk in response.iter_content(chunk_size=CHUNK_SIZE):
             if chunk:

@@ -109,10 +109,12 @@ class ConfigurationHandler:
                 ConfigurationHandler.write_config({'voice_ids': voice_ids})
                 print(f"[green]Voice ID saved successfully under the name: {name}[green]")
             elif save_voice == "no":
-                print("[yellow]Voice ID not saved. Proceeding...[/yellow]")
+                print("[yellow]Voice ID not saved.[/yellow]")
+                print("[yellow]Proceeding[/yellow]")
             return voice_id
         else:
-            print("[red]Invalid option. Returning to the main menu.[/red]")
+            print("[red]Invalid option.[/red]")
+            print("[yellow]Returning.[/yellow]")
             return "Invalid selection"
     
 
