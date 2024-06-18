@@ -1,13 +1,30 @@
+import ctypes
+import sys
+import os
+
+def is_admin():
+    try:
+        return ctypes.windll.shell32.IsUserAnAdmin()
+    except:
+        return False
+    
+def run_as_admin():
+    if sys.argv[-1] != 'asadmin':
+        script = os.path.abspath(sys.argv[0])
+        params = ' '.join([script] + sys.argv[1:] + ['asadmin'])
+        ctypes.windll.shell32.ShellExecuteW(None, "runas", sys.executable, params, None, 1)
+        sys.exit(0)
+        
+if not is_admin():
+    run_as_admin()
+
 from elevenlabs_handler import ElevenLabsHandler
 from audio_handler import AudioHandler
 from speech_to_text_handler import SpeechToTextHandler
 from configuration_handler import ConfigurationHandler
 from updater import Updater
 from rich import print
-import elevate
 import os
-
-elevate.elevate(show_console=True)
 
 print("[yellow]Program is loading, please wait...[/yellow]")
 
