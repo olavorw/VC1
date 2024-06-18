@@ -4,7 +4,7 @@ This project is a voice changer application that utilizes advanced speech recogn
 
 ## Agreements
 
-Please take notice to the EULA and License before installation. By installing, running, or using this software, you agree to the EULA and acknowledge the license.
+Please take notice to the [Code of Conduct](https://github.com/olanorw/voicechanger?tab=coc-ov-file) and License before installation. By installing, running, or using this software, you agree to the [Code of Conduct](https://github.com/olanorw/voicechanger?tab=coc-ov-file) and acknowledge the license.
 
 ## Contact Methods
 
