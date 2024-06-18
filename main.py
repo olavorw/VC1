@@ -7,8 +7,9 @@ from rich import print
 import elevate
 import os
 
-if not elevate.is_admin():
-    elevate.elevate(show_console=True)
+elevate.elevate(show_console=True)
+
+print("[yellow]Program is loading, please wait...[/yellow]")
 
 # Prompt the user to accept the EULA
 ConfigurationHandler.prompt_eula()
