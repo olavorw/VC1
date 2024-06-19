@@ -2,6 +2,7 @@ import json
 import os
 import time
 from rich import print
+from elevenlabs_handler import ElevenLabsHandler
 
 class ConfigurationHandler:
     config_file_path = 'config.json'
@@ -46,8 +47,9 @@ class ConfigurationHandler:
                 content = file.read()
                 print("[white]" + content)
             print("\n[yellow]Please wait...[/yellow]\n")
-        # Give the user time to read the EULA before prompting them to accept it
-        time.sleep(3)
+            # Give the user time to read the EULA before prompting them to accept it
+            time.sleep(3)
+        
         # Prompt the user to accept the EULA
         print("[yellow]Have you read and agreed to the EULA? (yes/no)")
         # Get user input and convert it to lowercase for case-insensitive comparison
@@ -56,7 +58,7 @@ class ConfigurationHandler:
             config['eula'] = "true"
             print("[green]EULA accepted.[/green]")
             # Prompt the user to choose whether to show the EULA on startup
-            print("[yellow]Don't ask again?\nYou can always change this by deleting the config.json file in the main directory.\n (yes/no)[/yellow]")
+            print("[yellow]Don't ask again?\nYou can always change this by deleting the config.json file in the main directory.\n(yes/no)[/yellow]")
             dontShowAgain = input().strip().lower()
             if dontShowAgain == "yes":
                 config['dontShowAgain'] = "true"
@@ -112,32 +114,40 @@ class ConfigurationHandler:
         if selection == "new":
             print("[yellow]Please enter a new ElevenLabs voice ID:[/yellow]")
             voice_id = input()
-            print("[yellow]Would you like to save this voice ID? (yes/no)[/yellow]")
-            save_voice = input().strip().lower()
-            if save_voice == "yes":
-                name = ""
-                while True:
-                    print("[yellow]Please enter a name to save this voice ID under:[/yellow]")
-                    name = input()
-                    if name.lower() != "new":
-                        break
-                    print("[red]Invalid name. 'new' is not allowed as a name. Please enter a different name:[/red]")
-                voice_ids[name] = voice_id  # Use the name as the key and voice ID as the value
-                ConfigurationHandler.write_config({'voice_ids': voice_ids})
-                print(f"[green]Voice ID saved successfully under the name: {name}[green]")
-            elif save_voice == "no":
-                print("[yellow]Voice ID not saved.[/yellow]")
-                print("[yellow]Proceeding[/yellow]")
-            return voice_id
+            print("[yellow]Checking voice ID...[/yellow]")
+            status = ElevenLabsHandler.check_voice_status(voice_id, ConfigurationHandler.get_api_key())
+            if status == "invalid":
+                print("[red]Invalid voice ID.[/red]")
+                print("[yellow]Returning.[/yellow]")
+                return ConfigurationHandler.prompt_voice_id()
+            if status == "valid":
+                print("[green]Voice ID is valid.[/green]")
+                print("[yellow]Would you like to save this voice ID? (yes/no)[/yellow]")
+                save_voice = input().strip().lower()
+                if save_voice == "yes":
+                    name = ""
+                    while True:
+                        print("[yellow]Please enter a name to save this voice ID under:[/yellow]")
+                        name = input()
+                        if name.lower() != "new":
+                            break
+                        print("[red]Invalid name. 'new' is not allowed as a name. Please enter a different name:[/red]")
+                    voice_ids[name] = voice_id  # Use the name as the key and voice ID as the value
+                    ConfigurationHandler.write_config({'voice_ids': voice_ids})
+                    print(f"[green]Voice ID saved successfully under the name: {name}[green]")
+                elif save_voice == "no":
+                    print("[yellow]Voice ID not saved.[/yellow]")
+                    print("[yellow]Proceeding[/yellow]")
+                return voice_id
         else:
             print("[red]Invalid option.[/red]")
             print("[yellow]Returning.[/yellow]")
             ConfigurationHandler.prompt_voice_id()
     
-
 if __name__ == "__main__":
     ConfigurationHandler.prompt_eula()
-    if not (api_key := ConfigurationHandler.get_api_key()):
+    api_key = ConfigurationHandler.get_api_key()
+    if not api_key:
         api_key = ConfigurationHandler.prompt_api_key()
-    print("Your ElevenLabs API key is:", api_key)
-    ConfigurationHandler.prompt_voice_id()
+    voice_id = ConfigurationHandler.prompt_voice_id()
+    

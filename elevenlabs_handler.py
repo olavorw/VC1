@@ -2,6 +2,8 @@ from elevenlabs import save
 from elevenlabs.client import ElevenLabs
 from rich import print
 import time
+import requests
+import re
 
 class ElevenLabsHandler:
     def __init__(self, api_key):
@@ -21,7 +23,28 @@ class ElevenLabsHandler:
         save(audio, file_name)
         return file_name
     
+    def check_voice_status(voice_id, api_key):
+        url = "https://api.elevenlabs.io/v1/voices/" + voice_id + "/"
+
+        headers = {"xi-api-key": api_key}
+
+        response = requests.request("GET", url, headers=headers)
+
+        json_string = response.text
+
+        match = re.search(r'"status":"(.*?)"', json_string)
+        
+        if match:
+            status = match.group(1)
+            if status == "voice_not_found":
+                return "invalid"
+            elif status == "invalid_uid":
+                return "invalid"
+            else:
+                return "valid"
+        else:
+            print("Status not found")
+
 # Tests
 if __name__ == "__main__":
-    handler = ElevenLabsHandler("")
-    handler.generate("Hello! The quick brown fox jumped over the fence", "")
+    ElevenLabsHandler.check_voice_status("VOICE_ID", "ELEVEN_API_KEY")
