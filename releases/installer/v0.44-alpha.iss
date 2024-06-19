@@ -5,8 +5,8 @@
 #define MyAppVersion "v0.44-alpha"
 #define MyAppPublisher "Olanorw also known as Olav Sharma"
 #define MyAppURL "https://olanorw.com/"
-#define ProjectPage "https://olanorw.com/projects/vc1/"
-#define Github
+#define ProjectPage "https://olanorw.com/projects/VC1/"
+#define Github "https://github.com/olanorw/VC1"
 #define MyAppExeName "VC1.exe"
 
 [Setup]
@@ -39,3 +39,27 @@ Source: "C:\Users\olavs\OneDrive\Documents\Programming\voicechanger\releases\v0.
 Name: "{autoprograms}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"
 ; Name: "{autodesktop}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"; Tasks: desktopicon
 
+[Code]
+var
+  CheckBox: TNewCheckBox;
+
+procedure InitializeWizard;
+begin
+  // Create a checkbox on the welcome page
+  CheckBox := TNewCheckBox.Create(WizardForm);
+  CheckBox.Caption := 'I accept the terms and conditions';
+  CheckBox.Left := 20;
+  CheckBox.Top := WizardForm.WelcomePage.Height - 50;
+  CheckBox.Width := WizardForm.ClientWidth - 40;
+  CheckBox.Parent := WizardForm.WelcomePage;
+end;
+
+procedure NextButtonClick(CurPageID: Integer; var Cancel, Confirm: Boolean);
+begin
+  // Check if the checkbox is checked
+  if (CurPageID = wpWelcome) and not CheckBox.Checked then
+  begin
+    MsgBox('You must accept the terms and conditions to proceed with the installation.', mbError, MB_OK);
+    Cancel := True; // Prevent moving to the next page
+  end;
+end;

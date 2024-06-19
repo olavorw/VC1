@@ -9,3 +9,4 @@ requests
 asyncio
 pygame
 elevate
+elevenlabs

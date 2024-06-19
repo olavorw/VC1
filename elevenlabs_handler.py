@@ -1,39 +1,34 @@
-import requests
+from elevenlabs import Voice, VoiceSettings, save
+from elevenlabs.client import ElevenLabs
 from rich import print
 import time
 
 class ElevenLabsHandler:
+    def __init__(self, api_key):
+        self.client = ElevenLabs(
+            api_key=api_key  # Defaults to ELEVEN_API_KEY
+        )
 
-  @staticmethod
-  # Define a method to get audio from the ElevenLabs API
-  def get_audio(text, voice, api_key):
-    # Set the chunk size for downloading the audio file
-    CHUNK_SIZE = 1024
-    url = "https://api.elevenlabs.io/v1/text-to-speech/" + voice
-
-    # Set the headers for the API request
-    headers = {
-        "Accept": "audio/mpeg",
-        "Content-Type": "application/json",
-        "xi-api-key": api_key
-    }
-
-    # Set the data for the API request
-    data = {
-        "text": text,
-        "model_id": "eleven_turbo_v2",
-        "voice_settings": {
-            "stability": 1,
-            "similarity_boost": 1
-        }
-    }
-    print("[yellow]Making a POST request to the ElevenLabs API..[/yellow]")
-    # Make a POST request to the API
-    response = requests.post(url, json=data, headers=headers)
-    timestamp = str(int(time.time()))
-    file_name = timestamp + '.mp3'
-    with open(file_name, 'wb') as f:
-        for chunk in response.iter_content(chunk_size=CHUNK_SIZE):
-            if chunk:
-                f.write(chunk)
-    return file_name
+    def generate(self, text, voice_id):
+        print("[yellow]Making a POST request to the ElevenLabs API, please wait...[/yellow]")
+        audio = self.client.generate(
+            text=text,
+            voice=Voice(
+                voice_id=voice_id,
+                settings=VoiceSettings(
+                    stability=0.71,
+                    similarity_boost=0.5,
+                    style=0.0,
+                    use_speaker_boost=True
+                )
+            )
+        )
+        timestamp = str(int(time.time()))
+        file_name = timestamp + '.mp3'
+        save(audio, file_name)
+        return file_name
+    
+# Tests
+if __name__ == "__main__":
+    handler = ElevenLabsHandler("")
+    handler.generate("Hello!", "")

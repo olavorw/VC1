@@ -13,13 +13,15 @@ current_version = '0.45'
 Updater.check_for_updates(current_version)
 
 # Initialize the ElevenLabsSpeech object
-elevenlabs = ElevenLabsHandler()
+
 
 # Get or prompt for the API key
 api_key = ConfigurationHandler.get_api_key()
 if not api_key:
     api_key = ConfigurationHandler.prompt_api_key()
-    
+
+elevenlabs = ElevenLabsHandler(api_key)
+
 # Initialize the audio player
 audio = AudioHandler()
 
@@ -37,7 +39,7 @@ while True:
     result = speech.listen_and_recognize()
     
     # Get the audio for the specified voice ID using ElevenLabsSpeech
-    audio_file = elevenlabs.get_audio(result, voice_id, api_key)
+    audio_file = elevenlabs.generate(result, voice_id)
     
     # Play the generated audio using AudioHandler
     audio.play_audio(audio_file)
