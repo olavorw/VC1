@@ -10,7 +10,7 @@ class ElevenLabsHandler:
         )
 
     def generate(self, text, voice_id):
-        print("[yellow]Making a POST request to the ElevenLabs API, please wait...[/yellow]")
+        print("[yellow]Making a request to the ElevenLabs API, please wait...[/yellow]")
         audio = self.client.generate(
             text=text,
             voice=voice_id,
@@ -23,5 +23,5 @@ class ElevenLabsHandler:
     
 # Tests
 if __name__ == "__main__":
-    handler = ElevenLabsHandler("92bf014d900ce7ef6b1a83e7e864f9a8")
-    handler.generate("Hello! The quick brown fox jumped over the fence", "y6Ao4Y93UrnTbmzdVlFc")
+    handler = ElevenLabsHandler("")
+    handler.generate("Hello! The quick brown fox jumped over the fence", "")
