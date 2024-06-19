@@ -2,17 +2,26 @@ from elevenlabs_handler import ElevenLabsHandler
 from audio_handler import AudioHandler
 from speech_to_text_handler import SpeechToTextHandler
 from configuration_handler import ConfigurationHandler
-from updater import Updater
+from web_handler import WebHandler
 from rich import print
 
 # Prompt the user to accept the EULA
 ConfigurationHandler.prompt_eula()
 
+if WebHandler.check_if_usable() == False:
+    print("[red]VC1 is currently unusable.[/red]")
+    exit()
+elif WebHandler.check_if_usable() == True:
+    pass
+else:
+    print("[red]An error occurred while checking if VC1 is usable. Please check your internet connection. Closing program...[/red]")
+    exit()
+
 # Define current version
 current_version = '0.5'
 
 # Check for updates
-Updater.check_for_updates(current_version)
+WebHandler.check_for_updates(current_version)
 
 # Get or prompt for the API key
 api_key = ConfigurationHandler.get_api_key()
