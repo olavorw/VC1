@@ -49,7 +49,11 @@ class ConfigurationHandler:
             print("\n[yellow]Please wait...[/yellow]\n")
             # Give the user time to read the EULA before prompting them to accept it
             time.sleep(3)
-        
+        if viewEULA == "no":
+            pass
+        else:
+            print("[red]Invalid option. Please enter 'yes' or 'no' next time.[/red]")
+            ConfigurationHandler.prompt_eula()
         # Prompt the user to accept the EULA
         print("[yellow]Have you read and agreed to the EULA? (yes/no)")
         # Get user input and convert it to lowercase for case-insensitive comparison
