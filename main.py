@@ -4,14 +4,11 @@ from speech_to_text_handler import SpeechToTextHandler
 from configuration_handler import ConfigurationHandler
 from updater import Updater
 from rich import print
-import os
-
-print("[yellow]Program is loading, please wait...[/yellow]")
 
 # Prompt the user to accept the EULA
 ConfigurationHandler.prompt_eula()
 
-current_version = '0.42'
+current_version = '0.45'
 
 Updater.check_for_updates(current_version)
 

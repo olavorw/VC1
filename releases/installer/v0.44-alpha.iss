@@ -5,43 +5,27 @@
 #define MyAppVersion "v0.44-alpha"
 #define MyAppPublisher "Olanorw also known as Olav Sharma"
 #define MyAppURL "https://olanorw.com/"
+#define ProjectPage "https://olanorw.com/projects/vc1/"
+#define Github
 #define MyAppExeName "VC1.exe"
 
 [Setup]
 ; NOTE: The value of AppId uniquely identifies this application. Do not use the same AppId value in installers for other applications.
 ; (To generate a new GUID, click Tools | Generate GUID inside the IDE.)
-AppId={{4266B6D5-8270-47A8-9CF0-05FC24848427}
+AppId={{8C9A605B-00AA-4357-912D-635A894FA4C0}
 AppName={#MyAppName}
 AppVersion={#MyAppVersion}
-;AppVerName={#MyAppName} {#MyAppVersion}
 AppPublisher={#MyAppPublisher}
 AppPublisherURL={#MyAppURL}
-AppSupportURL={#MyAppURL}
-AppUpdatesURL={#MyAppURL}
+AppSupportURL={#ProjectPage}
+AppUpdatesURL={#Github}
 DefaultDirName={autopf}\{#MyAppName}
-; "ArchitecturesAllowed=x64compatible" specifies that Setup cannot run
-; on anything but x64 and Windows 11 on Arm.
-ArchitecturesAllowed=x64compatible
-; "ArchitecturesInstallIn64BitMode=x64compatible" requests that the
-; install be done in "64-bit mode" on x64 or Windows 11 on Arm,
-; meaning it should use the native 64-bit Program Files directory and
-; the 64-bit view of the registry.
-ArchitecturesInstallIn64BitMode=x64compatible
 DisableProgramGroupPage=yes
 LicenseFile=C:\Users\olavs\OneDrive\Documents\Programming\voicechanger\releases\v0.44-alpha\installer_docs\EULA.txt
-; Uncomment the following line to run in non administrative install mode (install for current user only.)
-;PrivilegesRequired=lowest
-OutputBaseFilename=VC1
+PrivilegesRequired=lowest
+OutputBaseFilename=VC1_Installer
 SetupIconFile=C:\Users\olavs\OneDrive\Documents\Programming\voicechanger\assets\logo\VC1.ico
-Compression=lzma
-SolidCompression=yes
 WizardStyle=modern
-
-[Languages]
-Name: "english"; MessagesFile: "compiler:Default.isl"
-
-[Tasks]
-Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
 [Files]
 Source: "C:\Users\olavs\OneDrive\Documents\Programming\voicechanger\releases\v0.44-alpha\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
@@ -50,12 +34,8 @@ Source: "C:\Users\olavs\OneDrive\Documents\Programming\voicechanger\releases\v0.
 Source: "C:\Users\olavs\OneDrive\Documents\Programming\voicechanger\releases\v0.44-alpha\EULA.md"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\Users\olavs\OneDrive\Documents\Programming\voicechanger\releases\v0.44-alpha\LICENSE.md"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\Users\olavs\OneDrive\Documents\Programming\voicechanger\releases\v0.44-alpha\README.md"; DestDir: "{app}"; Flags: ignoreversion
-; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Icons]
 Name: "{autoprograms}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"
-Name: "{autodesktop}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"; Tasks: desktopicon
-
-[Run]
-Filename: "{app}\{#MyAppExeName}"; Description: "{cm:LaunchProgram,{#StringChange(MyAppName, '&', '&&')}}"; Flags: nowait postinstall skipifsilent
+; Name: "{autodesktop}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"; Tasks: desktopicon
 
