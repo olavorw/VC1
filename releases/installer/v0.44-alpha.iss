@@ -47,7 +47,7 @@ procedure InitializeWizard;
 begin
   // Create a checkbox on the welcome page
   CheckBox := TNewCheckBox.Create(WizardForm);
-  CheckBox.Caption := 'I accept the terms and conditions';
+  CheckBox.Caption := 'I accept the End User License Agreement';
   CheckBox.Left := 20;
   CheckBox.Top := WizardForm.WelcomePage.Height - 50;
   CheckBox.Width := WizardForm.ClientWidth - 40;
