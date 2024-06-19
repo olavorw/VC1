@@ -10,7 +10,9 @@ class ConfigurationHandler:
     def read_config():
         try:
             with open(ConfigurationHandler.config_file_path, 'r') as file:
-                return json.load(file)
+                config = json.load(file)
+                return config
+                
         except FileNotFoundError:
             return {}
 
@@ -33,27 +35,29 @@ class ConfigurationHandler:
         viewEULA = input().strip().lower()
         if viewEULA == "yes":
             with open('EULA.txt', 'r') as file:
-                print(file.read())
-        print("\n[yellow]Please wait...[/yellow]\n")
+                content = file.read()
+                print("[white]" + content)
+            print("\n[yellow]Please wait...[/yellow]\n")
         time.sleep(3)
         print("[yellow]Have you read and agreed to the EULA? (yes/no)")
         response = input().strip().lower()
         if response == "yes":
             config['eula'] = "true"
             print("[green]EULA accepted.[/green]")
-            print("[yellow]Don't show again? You can always change this by deleting the config.json file in the main directory. (yes/no)[/yellow]")
+            print("[yellow]Don't ask again?\nYou can always change this by deleting the config.json file in the main directory.\n (yes/no)[/yellow]")
             dontShowAgain = input().strip().lower()
             if dontShowAgain == "yes":
                 config['dontShowAgain'] = "true"
                 print("[green]EULA will not be shown again, you are still bound to the EULA. To reset this, delete config.json in the main directory.[/green]")
             else:
                 config.pop('dontShowAgain', None)
-                print("[green]EULA will be shown again.[/green]")
+                print("[green]EULA will be prompted on startup.[/green]")
             ConfigurationHandler.write_config(config)
         else:
             print("[red]You must agree to the EULA to use this software.[/red]")
-            print("[red]Closing Program in 3 seconds.[/red]")
-            time.sleep(3)
+            countdown = 3
+            for i in range(countdown, 0, -1):
+                print("[red]Closing Program in {i} seconds.[/red]")
             exit()
 
     @staticmethod
@@ -81,15 +85,15 @@ class ConfigurationHandler:
     def prompt_voice_id():
         voice_ids = ConfigurationHandler.get_voice_ids()
         if voice_ids:
-            print("[green]Voice ID(s) retrieved. Please select a voice by name. To add a new voice, type 'new'.[green]")
+            print("[green]Voice ID(s) retrieved.[/green]\n[yellow]Please select a voice by typing its name, or add a new voice by typing 'new'[/yellow]")
             for name, id in voice_ids.items():
                 print(f"Name: {name}, Voice ID: {id}")
-            print("[yellow]Enter a name or type 'new' to add a new voice ID:")
+            print("[yellow]Make a selection:[/yellow]")
             selection = input()
             if selection != "new":
-                return voice_ids.get(selection, "No such voice ID found.")
+                return voice_ids.get(selection, "No such voice found.")
         else:
-            print("[yellow]No voice IDs stored. Enter 'new' to add a voice ID:[/yellow]")
+            print("[yellow]No voice IDs stored. Enter 'new' to add a voice:[/yellow]")
             selection = input()
     
         if selection == "new":
@@ -123,3 +127,4 @@ if __name__ == "__main__":
     if not (api_key := ConfigurationHandler.get_api_key()):
         api_key = ConfigurationHandler.prompt_api_key()
     print("Your ElevenLabs API key is:", api_key)
+    ConfigurationHandler.prompt_voice_id()
