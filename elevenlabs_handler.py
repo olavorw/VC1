@@ -45,6 +45,18 @@ class ElevenLabsHandler:
         else:
             print("Status not found")
 
+    def check_api_key(api_key):
+        url = "https://api.elevenlabs.io/v1/voices/"
+
+        headers = {"xi-api-key": api_key}
+
+        response = requests.request("GET", url, headers=headers)
+        
+        if response.text == '{"detail":{"status":"invalid_api_key","message":"Invalid API key"}}':
+            return "invalid"
+        else:
+            return "valid"
+        
 # Tests
 if __name__ == "__main__":
-    ElevenLabsHandler.check_voice_status("VOICE_ID", "ELEVEN_API_KEY")
+    ElevenLabsHandler.check_api_key("dwasd")
