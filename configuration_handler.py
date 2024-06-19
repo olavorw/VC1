@@ -82,9 +82,17 @@ class ConfigurationHandler:
             return
         print("[yellow]Please enter your ElevenLabs API key:[/yellow]")
         api_key = input()
-        ConfigurationHandler.write_config({'api_key': api_key})
-        print("[green]API key saved successfully. To change your API key, delete the config.json file.[/green]")
-        return api_key
+        print("[yellow]Checking API key...[/yellow]")
+        status = ElevenLabsHandler.check_api_key(api_key)
+        if status == "invalid":
+            print("[red]Invalid API key.[/red]")
+            print("[yellow]Returning.[/yellow]")
+            return ConfigurationHandler.prompt_api_key()
+        if status == "valid":
+            print("[green]API key is valid. Saving API key.[/green]")
+            ConfigurationHandler.write_config({'api_key': api_key})
+            print("[green]API key saved successfully. To change your API key, delete the config.json file.[/green]")
+            return api_key
 
     @staticmethod
     def get_api_key():
