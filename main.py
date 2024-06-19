@@ -8,18 +8,18 @@ from rich import print
 # Prompt the user to accept the EULA
 ConfigurationHandler.prompt_eula()
 
+# Define current version
 current_version = '0.45'
 
+# Check for updates
 Updater.check_for_updates(current_version)
-
-# Initialize the ElevenLabsSpeech object
-
 
 # Get or prompt for the API key
 api_key = ConfigurationHandler.get_api_key()
 if not api_key:
     api_key = ConfigurationHandler.prompt_api_key()
-
+    
+# Initialize the ElevenLabsSpeech object
 elevenlabs = ElevenLabsHandler(api_key)
 
 # Initialize the audio player
