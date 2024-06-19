@@ -9,7 +9,7 @@ from rich import print
 ConfigurationHandler.prompt_eula()
 
 # Define current version
-current_version = '0.45'
+current_version = '0.5'
 
 # Check for updates
 Updater.check_for_updates(current_version)

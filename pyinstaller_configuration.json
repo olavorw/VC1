@@ -43,7 +43,7 @@
   },
   {
    "optionDest": "uac_admin",
-   "value": false
+   "value": true
   },
   {
    "optionDest": "uac_uiaccess",
@@ -59,23 +59,15 @@
   },
   {
    "optionDest": "datas",
-   "value": "C:/Users/olavs/OneDrive/Documents/Programming/voicechanger/archived/EULA.md;."
+   "value": "C:/Users/olavs/OneDrive/Documents/Programming/voicechanger/EULA.txt;"
   },
   {
    "optionDest": "datas",
-   "value": "C:/Users/olavs/OneDrive/Documents/Programming/voicechanger/CODE_OF_CONDUCT.md;."
+   "value": "C:/Users/olavs/OneDrive/Documents/Programming/voicechanger/LICENSE.txt;"
   },
   {
    "optionDest": "datas",
-   "value": "C:/Users/olavs/OneDrive/Documents/Programming/voicechanger/LICENSE.md;."
-  },
-  {
-   "optionDest": "datas",
-   "value": "C:/Users/olavs/OneDrive/Documents/Programming/voicechanger/README.md;."
-  },
-  {
-   "optionDest": "datas",
-   "value": "C:/Users/olavs/OneDrive/Documents/Programming/voicechanger/test.mp3;."
+   "value": "C:/Users/olavs/OneDrive/Documents/Programming/voicechanger/README.md;"
   }
  ],
  "nonPyinstallerOptions": {
