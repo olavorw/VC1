@@ -1,9 +1,22 @@
 import requests
 from rich import print
 import main
+from twitchAPI import Twitch
 
 # Define the WebHandler class
 class WebHandler:
+    
+    def is_vasehh_streaming():
+        try:
+            response = requests.get("https://olanorw.com/projects/vc1/vasehh.json")
+            if response.text.strip() == "true":
+                return True
+            else:
+                return False
+        except:
+            return "Error fetching..."
+            print("[red]Error fetching...")
+            print("[yellow]Continuing...")
     
     # Define a static method to check for updates
     def check_for_updates(current_version):
