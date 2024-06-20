@@ -8,11 +8,13 @@ import re
 class ElevenLabsHandler:
     def __init__(self, api_key):
         self.client = ElevenLabs(
-            api_key=api_key  # Defaults to ELEVEN_API_KEY
+            # Initialize the ElevenLabs client with the provided API key
+            api_key=api_key
         )
 
     def generate(self, text, voice_id):
         print("[yellow]Making a request to the ElevenLabs API, please wait...[/yellow]")
+        # Generate audio using the ElevenLabs client
         audio = self.client.generate(
             text=text,
             voice=voice_id,
@@ -20,6 +22,7 @@ class ElevenLabsHandler:
         )
         timestamp = str(int(time.time()))
         file_name = timestamp + '.mp3'
+        # Save the generated audio to a file
         save(audio, file_name)
         return file_name
     
@@ -59,4 +62,5 @@ class ElevenLabsHandler:
         
 # Tests
 if __name__ == "__main__":
+    # Check the validity of an API key
     ElevenLabsHandler.check_api_key("dwasd")
