@@ -5,6 +5,7 @@ import time
 import requests
 import re
 
+# Define the ElevenLabsHandler class
 class ElevenLabsHandler:
     def __init__(self, api_key):
         self.client = ElevenLabs(
