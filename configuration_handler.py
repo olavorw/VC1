@@ -41,6 +41,7 @@ class ConfigurationHandler:
         print("[yellow]Would you like to see a copy of the EULA here? (yes/no)[/yellow]")
         # Get user input and convert it to lowercase for case-insensitive comparison
         viewEULA = input().strip().lower()
+        print(viewEULA)
         # If the user wants to view the EULA, read the file and display its contents
         if viewEULA == "yes":
             with open('EULA.txt', 'r') as file:
@@ -49,7 +50,8 @@ class ConfigurationHandler:
             print("\n[yellow]Please wait...[/yellow]\n")
             # Give the user time to read the EULA before prompting them to accept it
             time.sleep(3)
-        if viewEULA == "no":
+            pass
+        elif viewEULA == "no":
             pass
         else:
             print("[red]Invalid option. Please enter 'yes' or 'no' next time.[/red]")
@@ -156,10 +158,15 @@ class ConfigurationHandler:
             print("[yellow]Returning.[/yellow]")
             ConfigurationHandler.prompt_voice_id()
     
-if __name__ == "__main__":
-    ConfigurationHandler.prompt_eula()
-    api_key = ConfigurationHandler.get_api_key()
-    if not api_key:
-        api_key = ConfigurationHandler.prompt_api_key()
-    voice_id = ConfigurationHandler.prompt_voice_id()
+    @staticmethod
+    def delete_item(item):
+        config = ConfigurationHandler.read_config()
+        if item in config:
+            del config[item]
+            ConfigurationHandler.write_config(config)
+            print(f"[green]{item} deleted successfully.[/green]")
+        else:
+            print(f"[red]{item} not found in configuration file.[/red]")
     
+if __name__ == "__main__":
+    pass
