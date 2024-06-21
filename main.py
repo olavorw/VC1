@@ -61,6 +61,13 @@ while True:
     # Get the recognized speech from the microphone using SpeechRecognition
     result = speech.listen_and_recognize()
     
+    # Check if the result wants to access configuration files
+    #if result.lower() == "configure":
+    #    # Get the configuration file
+    #    ConfigurationHandler.get_config()
+    #    # Continue the loop
+    #    continue
+    
     # Get the audio for the specified voice ID using ElevenLabsSpeech
     audio_file = elevenlabs.generate(result, voice_id)
     

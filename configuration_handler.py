@@ -18,6 +18,10 @@ class ConfigurationHandler:
         except FileNotFoundError:
             return {}
 
+    def rewrite_config(data):
+        with open(ConfigurationHandler.config_file_path, 'w') as file:
+            json.dump(data, file)
+
     # Write data to the configuration file
     @staticmethod
     def write_config(data):
@@ -158,15 +162,19 @@ class ConfigurationHandler:
             print("[yellow]Returning.[/yellow]")
             ConfigurationHandler.prompt_voice_id()
     
-    @staticmethod
-    def delete_item(item):
+    def remove_config_item(item):
         config = ConfigurationHandler.read_config()
         if item in config:
-            del config[item]
-            ConfigurationHandler.write_config(config)
-            print(f"[green]{item} deleted successfully.[/green]")
+            config.pop(item)
+            print(config)
+            ConfigurationHandler.rewrite_config(config)
+            print(f"[green]{item} removed from configuration.[/green]")
         else:
-            print(f"[red]{item} not found in configuration file.[/red]")
+            print(f"[red]{item} not found in configuration.[/red]")
     
 if __name__ == "__main__":
-    pass
+    api_key = ConfigurationHandler.get_api_key()
+    if not api_key:
+        # Prompt the user for the API key
+        api_key = ConfigurationHandler.prompt_api_key()
+    print(api_key)
