@@ -63,5 +63,6 @@ class ElevenLabsHandler:
         
 # Tests
 if __name__ == "__main__":
+    el = ElevenLabsHandler("API_KEY_HERE")
     # Check the validity of an API key
-    ElevenLabsHandler.check_api_key("dwasd")
+    el.generate("Hello, world!", "VOICE_ID_HERE")
