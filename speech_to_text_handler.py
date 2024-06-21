@@ -38,6 +38,7 @@ class SpeechToTextHandler:
                 except sr.UnknownValueError:
                     # Indicate that the recognizer could not understand the audio
                     print("[yellow]Google Speech Recognition could not understand audio, please try again...")
+                    SpeechToTextHandler.listen_and_recognize()
                 except sr.RequestError as e:
                     # Indicate that the recognizer could not request results from Google Speech Recognition service
                     print(f"Could not request results from Google Speech Recognition service; {e}")
