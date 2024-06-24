@@ -64,4 +64,4 @@ def convert_to_mono(input_file, output_file):
                 outfile.writeframes(frames)
 
 # Example usage
-play_sound('example.wav', 63)  # Replace with the correct device index
+play_sound('test.wav', 63)  # Replace with the correct device index
