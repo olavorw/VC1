@@ -33,11 +33,7 @@ WebHandler.check_for_updates(current_version)
 
 # Get or prompt for the API key
 api_key = ConfigurationHandler.get_api_key()
-# If the API key is not saved, prompt the user for it
-if not api_key:
-    # Prompt the user for the API key
-    api_key = ConfigurationHandler.prompt_api_key()
-    
+
 # Initialize the ElevenLabsSpeech object
 elevenlabs = ElevenLabsHandler(api_key)
 

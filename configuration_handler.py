@@ -85,29 +85,32 @@ class ConfigurationHandler:
                 print("[red]Closing Program in {i} seconds.[/red]")
             exit()
 
+    # Ask the user for their ElevenLabs API key
     @staticmethod
     def prompt_api_key():
-        if ConfigurationHandler.get_api_key():
-            print("[green]API key retrieved.[/green]")  # Indicate saved status without showing the key
-            return
         print("[yellow]Please enter your ElevenLabs API key:[/yellow]")
         api_key = input()
         print("[yellow]Checking API key...[/yellow]")
-        status = ElevenLabsHandler.check_api_key(api_key)
+        status = ElevenLabsHandler.check_api_key(api_key) # Check if the API key is valid
         if status == "invalid":
             print("[red]Invalid API key.[/red]")
             print("[yellow]Returning.[/yellow]")
-            return ConfigurationHandler.prompt_api_key()
-        if status == "valid":
+            return ConfigurationHandler.prompt_api_key() # Prompt the user for the API key again
+        elif status == "valid":
             print("[green]API key is valid. Saving API key.[/green]")
-            ConfigurationHandler.write_config({'api_key': api_key})
+            ConfigurationHandler.write_config({'api_key': api_key}) # Save the API key to the configuration file
             print("[green]API key saved successfully. To change your API key, delete the config.json file.[/green]")
             return api_key
 
+    # Get the API key from the configuration file
     @staticmethod
     def get_api_key():
-        config = ConfigurationHandler.read_config()
-        return config.get('api_key')
+        config = ConfigurationHandler.read_config() # Read the configuration file
+        if 'api_key' not in config:
+            return ConfigurationHandler.prompt_api_key()
+        else:
+            return config.get('api_key') # Return the API key if it exists
+        
     
     @staticmethod
     def get_voice_ids():
@@ -171,10 +174,9 @@ class ConfigurationHandler:
             print(f"[green]{item} removed from configuration.[/green]")
         else:
             print(f"[red]{item} not found in configuration.[/red]")
-    
+
+# Tests
 if __name__ == "__main__":
-    api_key = ConfigurationHandler.get_api_key()
-    if not api_key:
-        # Prompt the user for the API key
-        api_key = ConfigurationHandler.prompt_api_key()
-    print(api_key)
+    ConfigurationHandler.prompt_eula()
+    ConfigurationHandler.get_api_key()
+    ConfigurationHandler.prompt_voice_id()
