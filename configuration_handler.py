@@ -1,5 +1,4 @@
 import json
-import os
 import time
 from rich import print
 from elevenlabs_handler import ElevenLabsHandler
