@@ -7,7 +7,6 @@ class AudioHandler:
         print(f"[yellow]Playing audio file, please wait...[/yellow]")
         
         try:
-            
             pygame.mixer.init() # Initialize the mixer
             pygame.mixer.music.load(file_path) # Load the sound file
             
@@ -34,7 +33,6 @@ class AudioHandler:
         print(f"[yellow]Playing test file, please wait...[/yellow]") # Notify the user to wait for the audio to play
         
         try:
-            
             pygame.mixer.init() # Initialize the mixer
             pygame.mixer.music.load(file_path) # Load the sound file
 
