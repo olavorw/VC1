@@ -29,11 +29,14 @@ class ConfigurationHandler():
         """
         Reads the configuration file and returns the data as a dictionary.
         
-        Returns:
-        dict: The configuration data
+        Args:
+        None
         
         Example:
         config = ConfigurationHandler.read_config()
+        
+        Returns:
+        dict: The configuration data
         """
         try:
             with open(ConfigurationHandler.config_file_path, 'r') as file:
@@ -60,6 +63,18 @@ class ConfigurationHandler():
             json.dump(data, file)
 
     def write_config(data):
+        """
+        Writes the provided data to the configuration file.
+        
+        Args:
+        data (dict): The data to write to the configuration file
+        
+        Example:
+        ConfigurationHandler.write_config({'api_key': 'your_api_key'})
+        
+        Returns:
+        None
+        """
         existing_data = ConfigurationHandler.read_config()
         
         existing_data.update(data)  # Merge new data with existing data
@@ -67,6 +82,18 @@ class ConfigurationHandler():
             json.dump(existing_data, file)
 
     def prompt_agreements():
+        """
+        Prompts the user to accept the Code of Conduct, License, and Permission notice and possibly writes to the config.json file.
+        
+        Args:
+        None
+        
+        Example:
+        ConfigurationHandler.prompt_agreements()
+        
+        Returns:
+        None
+        """
         config = ConfigurationHandler.read_config() # Read the configuration file to check if the license and permission notice has already been accepted or doesn't need to be shown again
         if config.get('license') == "true" and config.get('dontShowAgain') == "true":
             print(f"[green]Code of Conduct, License, and Permission notice has already been accepted and will not be shown again as requested by the user. You are still bound to the license and permission notice when using this software.[/green]")
@@ -111,6 +138,18 @@ class ConfigurationHandler():
 
     # Ask the user for their ElevenLabs API key
     def prompt_api_key():
+        """
+        Prompts the user to enter their ElevenLabs API key and saves it to the configuration file.
+        
+        Args:
+        None
+        
+        Example:
+        ConfigurationHandler.prompt_api_key()
+        
+        Returns:
+        str: The API key entered by the user
+        """
         print(f"[yellow]Please enter your ElevenLabs API key:[/yellow]")
         api_key = input()
         
@@ -127,6 +166,18 @@ class ConfigurationHandler():
             return api_key
 
     def get_api_key():
+        """
+        Retrieves the ElevenLabs API key from the configuration file.
+        
+        Args:
+        None
+        
+        Example:
+        ConfigurationHandler.get_api_key()
+        
+        Returns:
+        str: The API key if it exists in the configuration file
+        """
         config = ConfigurationHandler.read_config() # Read the configuration file
         if 'api_key' not in config:
             return ConfigurationHandler.prompt_api_key()
@@ -134,10 +185,34 @@ class ConfigurationHandler():
             return config.get('api_key') # Return the API key if it exists
     
     def get_voice_ids():
+        """
+        Retrieves the voice IDs from the configuration file.
+        
+        Args:
+        None
+        
+        Example:
+        ConfigurationHandler.get_voice_ids()
+        
+        Returns:
+        dict: The voice IDs if they exist in the configuration file
+        """
         config = ConfigurationHandler.read_config()
         return config.get('voice_ids', {})  # Ensures a dictionary is returned even if 'voice_ids' does not exist
     
     def prompt_voice_id():
+        """
+        Prompts the user to enter a new voice ID or select an existing voice ID and saves it to the configuration file.
+        
+        Args:
+        None
+        
+        Example:
+        ConfigurationHandler.prompt_voice_id()
+        
+        Returns:
+        str: The voice ID entered by the user
+        """
         # Find out if there are any voice IDs stored in the configuration file
         voice_ids = ConfigurationHandler.get_voice_ids()
         if voice_ids:
@@ -192,6 +267,18 @@ class ConfigurationHandler():
             ConfigurationHandler.prompt_voice_id()
     
     def remove_config_item(item):
+        """
+        Removes an item from the configuration file.
+        
+        Args:
+        item (str): The item to remove from the configuration file
+        
+        Example:
+        ConfigurationHandler.remove_config_item('api_key')
+        
+        Returns:
+        None
+        """
         config = ConfigurationHandler.read_config()
         if item in config:
             config.pop(item)

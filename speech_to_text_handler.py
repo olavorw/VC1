@@ -21,11 +21,20 @@ from rich import print
 
 # Define the SpeechToTextHandler class
 class SpeechToTextHandler:
-    
-    # Define a static method to listen to the user's speech and recognize it
     @staticmethod
     def listen_and_recognize():
+        """
+        Listen to the user's speech and recognize it using Google Web Speech API.
         
+        Args:
+        None
+        
+        Example:
+        SpeechToTextHandler.listen_and_recognize()
+        
+        Returns:
+        str: The recognized text from the user's speech.
+        """
         # Initialize recognizer class (for recognizing the speech)
         r = sr.Recognizer()
 

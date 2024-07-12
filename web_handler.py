@@ -20,9 +20,20 @@ import requests
 from rich import print
 
 class WebHandler:
-    
     @staticmethod
     def check_for_updates(current_version):
+        """
+        Check for updates to VC1 by comparing the current version with the latest version available on the website.
+        
+        Args:
+        current_version (str): The current version of VC1.
+        
+        Example:
+        WebHandler.check_for_updates("0.5")
+        
+        Returns:
+        None
+        """
         try:
             response = requests.get("https://olanorw.com/projects/vc1/version.json")
             latest_version = response.text.strip()
@@ -33,10 +44,34 @@ class WebHandler:
     
     @staticmethod
     def notify_update(latest_version):
+        """
+        Notify the user that a new version of VC1 is available.
+        
+        Args:
+        latest_version (str): The latest version of VC1 available on the website.
+        
+        Example:
+        WebHandler.notify_update("0.6")
+        
+        Returns:
+        None
+        """
         print(f"[yellow]A new version of VC1 is available! [cyan]{latest_version}[/cyan]\n[yellow]You can download it from [cyan]https://olanorw.com/projects/vc1/download[/cyan]")
     
     @staticmethod
     def check_if_usable():
+        """
+        Check if VC1 is usable by pinging the website.
+        
+        Args:
+        None
+        
+        Example:
+        WebHandler.check_if_usable()
+        
+        Returns:
+        bool: True if VC1 is usable, False if VC1 is unusable, 'error' if an error occurred.
+        """
         try:
             response = requests.get("https://olanorw.com/projects/vc1/usable.json")
             if response.status_code == 200:

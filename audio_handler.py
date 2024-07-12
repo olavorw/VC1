@@ -22,6 +22,19 @@ import os
 
 class AudioHandler:
     def play_audio(file_path, deleteaudio):
+        """
+        Plays an audio file using the pygame library.
+        
+        Args:
+        file_path (str): The path to the audio file.
+        deleteaudio (bool): Whether or not to delete the audio file after playing it.
+        
+        Example:
+        AudioHandler.play_audio("./assets/audio/test.mp3", False)
+        
+        Returns:
+        None
+        """
         print(f"[yellow]Playing audio file, please wait...[/yellow]")
         
         try:
@@ -48,6 +61,18 @@ class AudioHandler:
                 print(f"[red]Error deleting audio file. Please delete the file manually.[/red]")
 
     def test_voice_id(file_path):
+        """
+        Tests a voice ID by playing a test audio file.
+        
+        Args:
+        file_path (str): The path to the audio file to test.
+        
+        Example:
+        AudioHandler.test_voice_id("./assets/audio/test.mp3")
+        
+        Returns:
+        None
+        """
         print(f"[yellow]Playing test file, please wait...[/yellow]") # Notify the user to wait for the audio to play
         
         try:

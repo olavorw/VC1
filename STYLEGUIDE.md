@@ -30,14 +30,14 @@ def add(a, b):
     a (int or float): The first number.
     b (int or float): The second number.
 
-    Returns:
-    int or float: The sum of the two numbers.
-
     Example:
     add(2, 3)
     5
-    """
+    
+    Returns:
+    int or float: The sum of the two numbers.
     return a + b
+    """
 ```
 - **Comments**: use comments to explain complex code or to provide additional context to the code when adding comments, use the "#" character above the line of code you are commenting on if you are talking about the following section of code, when adding context to a specific line, use the "#" character at the end of the line of code you are commenting on
 - **Blank lines**: use blank lines to separate logical sections of code
