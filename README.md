@@ -18,30 +18,21 @@ When you install, run, or use this software, you agree to the Code of Conduct in
 
 ## File Structure
 ### Directories
-- **archive**: Contains archived files from the project
-- **assets**: Contains assets used in the project
-- **docs**: Contains documentation for the project
-- **releases**: Contains releases of the project
-- **testing**: Contains testing files for the project
-- **unused**: Contains unused files from the project
-### Files (in root directory)
+- **[archive](/archive/)**: Contains archived files from the project
+- **[assets](/assets/)**: Contains assets used in the project
+- **[docs](/docs/)**: Contains documentation for the project
+- **[releases](/releases/)**: Contains releases of the project
+- **[testing](/testing/)**: Contains testing files for the project
+- **[unused](/unused/)**: Contains unused files from the project
+### Documents
 - **[CODE_OF_CONDUCT.md](./CODE_OF_CONDUCT.md)**: Contains the code of conduct for the project
-- **CONTRIBUTING.md**: Contains guidelines for contributing to the project
-- **ISSUES.md**: Contains a list of known issues for the project
-- **LICENSE.md**: Contains the license for the project
-- **README.md**: Contains a brief description of the project, installation instructions, usage instructions, and examples
-- **ROADMAP.md**: Contains future plans for the project
-- **STYLEGUIDE.md**: Contains style guidelines for the project
-- **TODO.md**: Contains a list of tasks that need to be completed
-- **main.py**: Contains the main code for the project
-- **audio_handler.py**: Contains the audio handling code for the project
-- **speech_to_text_handler.py**: Contains the speech recognition code for the project
-- **elevenlabs_handler_.py**: Contains the voice synthesis code using [Elevenlabs](https://elevenlabs.io) for the project
-- **web_handler.py**: Contains the web handling code for the project
-- **configuration_handler.py**: Contains the configuration handling code for the project
-- **pyinstaller_configuration.json**: Contains the configuration for PyInstaller
-- **requirements.txt**: Contains the required packages for the project
-- **.gitignore**: Contains the files and directories to be ignored by Git
+- **[CONTRIBUTING.md](./CONTRIBUTING.md)**: Contains guidelines for contributing to the project
+- **[ISSUES.md](./ISSUES.md)**: Contains a list of known issues for the project
+- **[LICENSE.md](./LICENSE.md)**: Contains the license for the project
+- **[README.md](./README.md)**: Contains a brief description of the project, installation instructions, usage instructions, and examples
+- **[ROADMAP.md](./ROADMAP.md)**: Contains future plans for the project
+- **[STYLEGUIDE.md](./STYLEGUIDE.md)**: Contains style guidelines for the project
+- **[TODO.md](./TODO.md)**: Contains a list of tasks that need to be completed
 
 ``` 
 __/\\\________/\\\_        ________/\\\\\\\\\_        ______/\\\_        
