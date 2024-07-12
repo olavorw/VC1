@@ -12,3 +12,4 @@ elevate
 elevenlabs
 pythonnet
 pytest
+unittest

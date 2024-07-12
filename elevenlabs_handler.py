@@ -22,6 +22,7 @@ from rich import print
 import time
 import requests
 import re
+import unittest
 
 # Define the ElevenLabsHandler class
 class ElevenLabsHandler:
@@ -41,7 +42,7 @@ class ElevenLabsHandler:
         self.client = ElevenLabs(
             api_key=api_key # Initialize the ElevenLabs client with the provided API key
         )
-
+    
     def generate(self, text, voice_id):
         """
         Generate audio using the ElevenLabs API.
@@ -94,9 +95,7 @@ class ElevenLabsHandler:
         
         if match:
             status = match.group(1)
-            if status == "voice_not_found":
-                return "invalid"
-            elif status == "invalid_uid":
+            if status == "voice_not_found" or "invalid_uid":
                 return "invalid"
             else:
                 return "valid"
@@ -127,6 +126,4 @@ class ElevenLabsHandler:
         
 # Tests
 if __name__ == "__main__":
-    el = ElevenLabsHandler("API_KEY_HERE")
-    # Check the validity of an API key
-    el.generate("Hello, world!", "VOICE_ID_HERE")
+    pass

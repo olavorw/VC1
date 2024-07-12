@@ -101,10 +101,12 @@ class ConfigurationHandler():
         
         # Prompt the user to view the license and permission notice
         print(f"[yellow]By using this software, you agree to the Code of Conduct, License, and Permission notice in the \"LICENSE.md\" and \"CODE_OF_CONDUCT.md\" files respectively.[/yellow]")
-        print(f"[yellow]Please read the Code of Conduct and License file.[/yellow]")
+        print(f"[yellow]Please read the Code of Conduct and License file...[/yellow]")
+        time.sleep(3)
         with open('CODE_OF_CONDUCT.md', 'r') as file:
             code_of_conduct = file.read()
             print(f"[bold white]\n" + code_of_conduct)
+        time.sleep(3)
         with open('LICENSE.md', 'r') as file:
             license = file.read()
             print(f"[bold white]\n" + license)

@@ -21,6 +21,7 @@ from rich import print
 import os
 
 class AudioHandler:
+    @staticmethod
     def play_audio(file_path, deleteaudio):
         """
         Plays an audio file using the pygame library.
@@ -39,7 +40,7 @@ class AudioHandler:
         
         try:
             pygame.mixer.init() # Initialize the mixer
-            pygame.mixer.music.load(file_path) # Load the sound file
+            pygame.mixer.music.load("./" + file_path) # Load the sound file
             
             pygame.mixer.music.play() # Play the sound file
             # Keep the script running until the audio is finished playing

@@ -22,10 +22,11 @@ from speech_to_text_handler import SpeechToTextHandler
 from configuration_handler import ConfigurationHandler
 from web_handler import WebHandler
 from rich import print
+import time
 
-print(f"[bold yellow]VC1  Copyright (C) 2024  Olanorw and Olav Sharma This program comes with ABSOLUTELY NO WARRANTY; for details say `show w'. This is free software, and you are welcome to redistribute itunder certain conditions; say `show c' for details.")
+print(f"\n[yellow]VC1 Copyright (C) 2024  Olanorw and Olav Sharma This program comes with ABSOLUTELY NO WARRANTY; for details say `show w'. This is free software, and you are welcome to redistribute itunder certain conditions; say `show c' for details.\n")
 
-async def show_w():
+def show_w():
     """
     Show the warranty information for VC1.
     
@@ -42,7 +43,7 @@ async def show_w():
         code_of_conduct = file.read()
         print(f"[bold white]\n" + code_of_conduct)
 
-async def show_c():
+def show_c():
     """
     Show the license information for VC1.
     
@@ -60,9 +61,12 @@ async def show_c():
         print(f"[white]\n" + license)
     print(f"\n[bold white]Please wait...[/yellow]\n")
 
-print(f"[bold white]__/\\\\\\________/\\\\\\_        ________/\\\\\\\\\\\\\\\\\\_        ______/\\\\\\_\n _\\/\\\\\\_______\\/\\\\\\_        _____/\\\\\\////////__        __/\\\\\\\\\\\\\\_\n  _\\//\\\\\\______/\\\\\\__        ___/\\\\\\/___________        _\\/////\\\\\\_\n   __\\//\\\\\\____/\\\\\\___        __/\\\\\\_____________        _____\\/\\\\\\_\n    ___\\//\\\\\\__/\\\\\\____        _\\/\\\\\\_____________        _____\\/\\\\\\_\n     ____\\//\\\\\\/\\\\\\_____        _\\//\\\\\\____________        _____\\/\\\\\\_\n      _____\\//\\\\\\\\\\______        __\\///\\\\\\__________        _____\\/\\\\\\_\n       ______\\//\\\\\\_______        ____\\////\\\\\\\\\\\\\\\\\\_        _____\\/\\\\\\_\n        _______\\///________        _______\\/////////__        _____\\///_")
+print(f"[bold white]__/\\\\\\________/\\\\\\_        ________/\\\\\\\\\\\\\\\\\\_        ______/\\\\\\_\n _\\/\\\\\\_______\\/\\\\\\_        _____/\\\\\\////////__        __/\\\\\\\\\\\\\\_\n  _\\//\\\\\\______/\\\\\\__        ___/\\\\\\/___________        _\\/////\\\\\\_\n   __\\//\\\\\\____/\\\\\\___        __/\\\\\\_____________        _____\\/\\\\\\_\n    ___\\//\\\\\\__/\\\\\\____        _\\/\\\\\\_____________        _____\\/\\\\\\_\n     ____\\//\\\\\\/\\\\\\_____        _\\//\\\\\\____________        _____\\/\\\\\\_\n      _____\\//\\\\\\\\\\______        __\\///\\\\\\__________        _____\\/\\\\\\_\n       ______\\//\\\\\\_______        ____\\////\\\\\\\\\\\\\\\\\\_        _____\\/\\\\\\_\n        _______\\///________        _______\\/////////__        _____\\///_\n")
 
-ConfigurationHandler.prompt_agreements() # Prompt the user to accept the EULA
+time.sleep(3)
+
+Config = ConfigurationHandler
+Config.prompt_agreements() # Prompt the user to accept the EULA
 
 if WebHandler.check_if_usable() == False:
     
@@ -79,13 +83,12 @@ else: # If an error occurred while checking if VC1 is usable, print a message an
 current_version = '0.5'
 WebHandler.check_for_updates(current_version)
 
-# Get or prompt for the API key
-api_key = ConfigurationHandler.get_api_key() 
-ElevenLabsHandler(api_key) # Initialize the ElevenLabsSpeech object
 
-# Initialize the handlers
-AudioHandler()
-SpeechToTextHandler()
+api_key = Config.get_api_key() # Get or prompt for the API key for initializing the ElevenLabs client
+
+TTS = ElevenLabsHandler(api_key)
+Audio = AudioHandler()
+STT = SpeechToTextHandler()
 
 # Get the voice ID
 print(f"[yellow]Please enter your ElevenLabs voice ID...[/yellow]")
@@ -94,13 +97,14 @@ print(f"[green]Selected Voice ID: {voice_id}.[/green]") # Let the user know that
 
 # Initialize the main loop
 while True:
-    result = SpeechToTextHandler.listen_and_recognize() # Get the recognized speech from the microphone using SpeechRecognition
+    result = STT.listen_and_recognize() # Get the recognized speech from the microphone using SpeechRecognition
     
     if result == "show w":
         show_w()
     elif result == "show c":
         show_c()
 
-    audio_file = ElevenLabsHandler.generate(result, voice_id) # Get the audio for the specified voice ID using ElevenLabsSpeech
+    audio_file = TTS.generate(result, voice_id) # Get the audio for the specified voice ID using ElevenLabsSpeech
+    time.sleep(0.5) # Waiting to make sure everything is ready
     
-    AudioHandler.play_audio(audio_file) # Play the generated audio using AudioHandler
+    Audio.play_audio(audio_file, True) # Play the generated audio using AudioHandler
