@@ -1,5 +1,5 @@
 ## 1. Introduction
-This Code of Conduct ("Agreement") is a legal agreement between you (either an individual or a single entity) and Olanorw aka Olav Sharma ("Company", "we", "us", or "our") for the software product identified above, which includes computer software and may include associated media, printed materials, and "online" or electronic documentation ("Software").
+This Code of Conduct ("Agreement") is a legal agreement, and should be treated like an "EULA" or "End User License Agreement" despite taking the name "Code of Conduct". This agreement is between you (either an individual or a single entity) and Olanorw aka Olav Sharma ("Company", "we", "us", or "our") for the software product identified above, which includes computer software and may include associated media, printed materials, and "online" or electronic documentation ("Software").
 
 ## 2. Agreement
 By installing, copying, or otherwise using the Software, you agree to be bound by the terms of this Agreement, ElevenLabs policies, Google Cloud policies, and the LICENSE.md file. If you do not agree to the terms of this Agreement, do not install or use the Software. When saying yes to the "Don't show again?" option when the program is launched, you still binded to this Code of Conduct.
