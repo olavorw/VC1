@@ -1,3 +1,21 @@
+"""
+VC1 - Voice Command 1
+Copyright (C) 2024  Olanorw aka Olav SHarma
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <https://www.gnu.org/licenses/>.
+"""
+
 import json
 import time
 from tkinter import N
@@ -8,6 +26,15 @@ class ConfigurationHandler():
     config_file_path = 'config.json'
 
     def read_config():
+        """
+        Reads the configuration file and returns the data as a dictionary.
+        
+        Returns:
+        dict: The configuration data
+        
+        Example:
+        config = ConfigurationHandler.read_config()
+        """
         try:
             with open(ConfigurationHandler.config_file_path, 'r') as file:
                 config = json.load(file)
@@ -38,10 +65,10 @@ class ConfigurationHandler():
         print(f"[yellow]Please read the Code of Conduct and License file.[/yellow]")
         with open('CODE_OF_CONDUCT.md', 'r') as file:
             code_of_conduct = file.read()
-            print(f"[white]\n" + code_of_conduct)
+            print(f"[bold white]\n" + code_of_conduct)
         with open('LICENSE.md', 'r') as file:
             license = file.read()
-            print(f"[white]\n" + license)
+            print(f"[bold white]\n" + license)
         print(f"\n[yellow]Please wait...[/yellow]\n")
         # Give the user time to read the license and permission notice before prompting them to accept it
         time.sleep(3)

@@ -1,5 +1,5 @@
 ## 1. Introduction
-This Code of Conduct ("Agreement") is a legal agreement, and should be treated like an "EULA" or "End User License Agreement" despite taking the name "Code of Conduct". This agreement is between you (either an individual or a single entity) and Olanorw aka Olav Sharma ("Company", "we", "us", or "our") for the software product identified above, which includes computer software and may include associated media, printed materials, and "online" or electronic documentation ("Software").
+This Code of Conduct ("Agreement") is a legal agreement, and should be treated like an "EULA" or "End User License Agreement" despite taking the name "Code of Conduct". The License is also part of this agreement and can be found in the [LICENSE.md](./LICENSE.md) file. This agreement is between you (either an individual or a single entity) and Olanorw aka Olav Sharma ("Company", "we", "us", or "our") for the software product identified above, which includes computer software and may include associated media, printed materials, and "online" or electronic documentation ("Software").
 
 ## 2. Agreement
 By installing, copying, or otherwise using the Software, you agree to be bound by the terms of this Agreement, ElevenLabs policies, Google Cloud policies, and the LICENSE.md file. If you do not agree to the terms of this Agreement, do not install or use the Software. When saying yes to the "Don't show again?" option when the program is launched, you still binded to this Code of Conduct.
@@ -12,22 +12,21 @@ For more information, read the full [LICENSE.md](./LICENSE.md) file.
 
 ## 4. Restrictions
 1. You may not:
-2. Reverse Engineer: Reverse engineer, decompile, or disassemble the Software.
-3. Rental: Rent or lease the Software.
-4. Transfer: Transfer your rights under this Code of Conduct to another party without the consent of Olanorw aka Olav Sharma Provider.
-5. Use The Software Irresponsibly: Always clarify to people that you are using a voice changer, and do not cause harm to others or yourself using this.
+2. Rental: Rent or lease the Software.
+3. Transfer: Transfer your rights under this Code of Conduct to another party without the consent of Olanorw aka Olav Sharma.
+4. Use The Software Irresponsibly: Do not cause harm to others or yourself using this Software.
 
 ## 5. Termination
-Without prejudice to any other rights, Olanorw aka Olav Sharma Provider may terminate this Code of Conduct if you fail to comply with the terms and conditions of this Code of Conduct. In such event, you must destroy all copies of the Software and all of its component parts.
+Without prejudice to any other rights, Olanorw aka Olav Sharma may terminate this Code of Conduct if you fail to comply with the terms and conditions of this Code of Conduct. In such event, you must destroy all copies of the Software and all of its component parts.
 
 ## 6. Copyright
-The Software is owned by Olanorw aka Olav Sharma Provider and is protected by United States copyright law and international treaty provisions.
+The Software is owned by Olanorw aka Olav Sharma and is protected by United States copyright law and international treaty provisions.
 
 ## 7. Limited Warranty
 Olanorw aka Olav Sharma expressly disclaims any warranty for the Software. The Software and any related documentation is provided "as is" without warranty of any kind, either express or implied, including, without limitation, the implied warranties or merchantability, fitness for a particular purpose, or noninfringement. The entire risk arising out of use or performance of the Software remains with you.
 
 ## 8. Limitation of Liability
-In no event shall Olanorw aka Olav Sharma Provider or its suppliers be liable for any damages whatsoever (including, without limitation, damages for loss of business profits, business interruption, loss of business information, or any other pecuniary loss) arising out of the use of or inability to use this Olanorw aka Olav Sharma Provider product, even if Olanorw aka Olav Sharma Provider has been advised of the possibility of such damages.
+In no event shall Olanorw aka Olav Sharma or its suppliers be liable for any damages whatsoever (including, without limitation, damages for loss of business profits, business interruption, loss of business information, or any other pecuniary loss) arising out of the use of or inability to use this Olanorw aka Olav Sharma product, even if Olanorw aka Olav Sharma has been advised of the possibility of such damages.
 
 ## 9. Compliance with Applicable Laws
 You must comply with all applicable laws regarding the use of the Software.
