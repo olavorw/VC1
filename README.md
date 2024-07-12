@@ -1,4 +1,4 @@
-# VC1 Voice Changer
+# VC1 - Voice Command 1
 This project is a voice changer application that utilizes advanced speech recognition technology and ElevenLabs' API to alter the user's voice in real-time. It's designed for users looking to have fun with voice modifications and for developers interested in exploring voice synthesis and transformation technologies.
 
 ## Installation
