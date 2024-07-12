@@ -27,42 +27,35 @@ class ConfigurationHandler():
         with open(ConfigurationHandler.config_file_path, 'w') as file:
             json.dump(existing_data, file)
 
-    def prompt_license():
-        # Read the configuration file to check if the license and permission notice has already been accepted or doesn't need to be shown again
-        config = ConfigurationHandler.read_config()
+    def prompt_agreements():
+        config = ConfigurationHandler.read_config() # Read the configuration file to check if the license and permission notice has already been accepted or doesn't need to be shown again
         if config.get('license') == "true" and config.get('dontShowAgain') == "true":
-            print(f"[green]License and permission notice has already been accepted and will not be shown again. You are still bound to the license and permission notice when using this software.[/green]")
+            print(f"[green]Code of Conduct, License, and Permission notice has already been accepted and will not be shown again as requested by the user. You are still bound to the license and permission notice when using this software.[/green]")
             return
         
         # Prompt the user to view the license and permission notice
-        print(f"[yellow]By using this software, you agree to the license and permission notice in the \"LICENSE.md\" file.[/yellow]")
-        print(f"[yellow]Would you like to see a copy of the license file here? (yes/no)[/yellow]")
-        viewLicense = input().strip().lower()
-        print(viewLicense)
-        if viewLicense == "yes":
-            with open('LICENSE.md', 'r') as file:
-                content = file.read()
-                print(f"[white]" + content)
-            print(f"\n[yellow]Please wait...[/yellow]\n")
-            # Give the user time to read the license and permission notice before prompting them to accept it
-            time.sleep(3)
-            pass
-        elif viewLicense == "no":
-            pass
-        else:
-            print(f"[red]Invalid option. Please enter 'yes' or 'no' next time.[/red]")
-            ConfigurationHandler.prompt_license()
+        print(f"[yellow]By using this software, you agree to the Code of Conduct, License, and Permission notice in the \"LICENSE.md\" and \"CODE_OF_CONDUCT.md\" files respectively.[/yellow]")
+        print(f"[yellow]Please read the Code of Conduct and License file.[/yellow]")
+        with open('CODE_OF_CONDUCT.md', 'r') as file:
+            code_of_conduct = file.read()
+            print(f"[white]\n" + code_of_conduct)
+        with open('LICENSE.md', 'r') as file:
+            license = file.read()
+            print(f"[white]\n" + license)
+        print(f"\n[yellow]Please wait...[/yellow]\n")
+        # Give the user time to read the license and permission notice before prompting them to accept it
+        time.sleep(3)
             
         # Prompt the user to accept the license and permission notice
-        print(f"[yellow]Have you read and agreed to the license and permission notice? (yes/no)")
+        print(f"[yellow]Have you read and agree to the Code of Conduct, License, and Permission notice? (yes/no)")
         response = input().strip().lower()
         if response == "yes":
             config['license'] = "true"
             print(f"[green]License and permission notice accepted.[/green]")
         else:
             print(f"[red]You must agree to the license and permission notice to use this software.[/red]")
-            licenseCloseCountdown = 3
-            for i in range(licenseCloseCountdown, 0, -1):
+            agreementCloseCountdown = 3
+            for i in range(agreementCloseCountdown, 0, -1):
                 print(f"[red]Closing Program in {i} seconds.[/red]")
             exit()
             
@@ -71,10 +64,10 @@ class ConfigurationHandler():
         dontShowAgain = input().strip().lower()
         if dontShowAgain == "yes":
             config['dontShowAgain'] = "true"
-            print(f"[green]License and permission notice will not be prompted for again, you are still bound to them. To reset this, delete config.json in the main directory.[/green]")
+            print(f"[green]Code of Conduct, License and Permission notice will not be prompted for again, you are still bound to them. To reset this, delete config.json in the main directory.[/green]")
         else:
             config.pop('dontShowAgain', None)
-            print(f"[green]License and permission notice will be prompted on startup.[/green]")
+            print(f"[green]Code of Conduct, License and Permission notice will be prompted on startup.[/green]")
         ConfigurationHandler.write_config(config)
 
     # Ask the user for their ElevenLabs API key

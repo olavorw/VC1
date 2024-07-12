@@ -1,4 +1,5 @@
 # Style guidelines for the project
+This document contains the style guidelines for the project. The guidelines cover naming conventions, code style, documentation, and other aspects of the project.
 
 ## Naming conventions
 - **Variables**: `snake_case`

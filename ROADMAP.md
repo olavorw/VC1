@@ -1,4 +1,5 @@
-# Plans for the project
+# Roadmap for the project
+This roadmap is the list of future plans for the project. To see the current to-do list for the project, see [TODO.md](./TODO.md).
 
 ## Features
 
@@ -9,6 +10,11 @@
 - **Speech Recognition**: Change the speech recognition to use a cheap, preferrably free, service other than Azure
 
 ## Releases
+
+### Next Release
+- **Code Style**: Follow the code style guidelines
+- **Documentation**: Write the documentation for the project
+- **Support**: Provide support for the project
 
 ### Version 1.0
 - **Features**: Implement the easy features

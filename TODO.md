@@ -1,4 +1,5 @@
 # To-do list for the project
+This todo list is the list of current things we are working on. To see the roadmap for the project, see [ROADMAP.md](./ROADMAP.md).
 
 ## Features
 
