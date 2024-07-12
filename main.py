@@ -23,18 +23,54 @@ from configuration_handler import ConfigurationHandler
 from web_handler import WebHandler
 from rich import print
 
-print("[bold yellow]VC1  Copyright (C) 2024  Olanorw and Olav Sharma This program comes with ABSOLUTELY NO WARRANTY; for details say `show w'. This is free software, and you are welcome to redistribute itunder certain conditions; say `show c' for details.")
+print(f"[bold yellow]VC1  Copyright (C) 2024  Olanorw and Olav Sharma This program comes with ABSOLUTELY NO WARRANTY; for details say `show w'. This is free software, and you are welcome to redistribute itunder certain conditions; say `show c' for details.")
 
 async def show_w():
+    """
+    Show the warranty information for VC1.
+    
+    Args:
+    None
+    
+    Example:
+    show_w()
+    
+    Returns:
+    None
+    """
     with open('CODE_OF_CONDUCT.md', 'r') as file:
         code_of_conduct = file.read()
         print(f"[bold white]\n" + code_of_conduct)
 
 async def show_c():
+    """
+    Show the license information for VC1.
+    
+    Args:
+    None
+    
+    Example:
+    show_w()
+    
+    Returns:
+    None
+    """
     with open('LICENSE.md', 'r') as file:
         license = file.read()
         print(f"[white]\n" + license)
     print(f"\n[bold white]Please wait...[/yellow]\n")
+
+print(f'''[bold white]
+\n__/\\\________/\\\_        ________/\\\\\\\\\_        ______/\\\_        
+\n _\/\\\_______\/\\\_        _____/\\\////////__        __/\\\\\\\_       
+\n  _\//\\\______/\\\__        ___/\\\/___________        _\/////\\\_      
+\n   __\//\\\____/\\\___        __/\\\_____________        _____\/\\\_     
+\n    ___\//\\\__/\\\____        _\/\\\_____________        _____\/\\\_    
+\n     ____\//\\\/\\\_____        _\//\\\____________        _____\/\\\_   
+\n      _____\//\\\\\______        __\///\\\__________        _____\/\\\_  
+\n       ______\//\\\_______        ____\////\\\\\\\\\_        _____\/\\\_ 
+\n        _______\///________        _______\/////////__        _____\///_ 
+''')
 
 ConfigurationHandler.prompt_agreements() # Prompt the user to accept the EULA
 

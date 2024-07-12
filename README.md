@@ -25,7 +25,7 @@ When you install, run, or use this software, you agree to the Code of Conduct in
 - **testing**: Contains testing files for the project
 - **unused**: Contains unused files from the project
 ### Files (in root directory)
-- **CODE_OF_CONDUCT.md**: Contains the code of conduct for the project
+- **[CODE_OF_CONDUCT.md](./CODE_OF_CONDUCT.md)**: Contains the code of conduct for the project
 - **CONTRIBUTING.md**: Contains guidelines for contributing to the project
 - **ISSUES.md**: Contains a list of known issues for the project
 - **LICENSE.md**: Contains the license for the project

@@ -50,6 +50,8 @@ def add(a, b):
 - **Code readability**: write code that is easy to read and understand
 - **Code complexity**: keep code complexity to a minimum
 - **Code duplication**: avoid code duplication
+- **Code optimization**: optimize code for performance and efficiency
+- **ASCII art**: when adding ASCII art to your code, use the following format: ``` your ASCII art here ```
 
 ## Legal guidelines
 - **Include a notice**: Include a notice at the top of your code that you are the author of the code like this:
