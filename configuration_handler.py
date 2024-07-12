@@ -44,6 +44,18 @@ class ConfigurationHandler():
             return {}
 
     def rewrite_config(data):
+        """
+        Writes the provided data to the configuration file.
+        
+        Args:
+        data (dict): The data to write to the configuration file
+        
+        Example:
+        ConfigurationHandler.rewrite_config({'api_key': 'your_api_key'})
+        
+        Returns:
+        None
+        """
         with open(ConfigurationHandler.config_file_path, 'w') as file:
             json.dump(data, file)
 

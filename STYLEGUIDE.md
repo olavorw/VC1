@@ -20,7 +20,25 @@ This document contains the style guidelines for the project. The guidelines cove
 - **Line length**: 79 characters
 - **Imports**: each import on a separate line
 - **Type hints**: use type hints whenever possible
-- **Docstrings**: use docstrings for all modules, classes, functions, and methods
+- **Docstrings**: use docstrings for all modules, classes, functions, and methods Example:
+```python
+def add(a, b):
+    """
+    Add two numbers and return the result.
+
+    Args:
+    a (int or float): The first number.
+    b (int or float): The second number.
+
+    Returns:
+    int or float: The sum of the two numbers.
+
+    Example:
+    add(2, 3)
+    5
+    """
+    return a + b
+```
 - **Comments**: use comments to explain complex code or to provide additional context to the code when adding comments, use the "#" character above the line of code you are commenting on if you are talking about the following section of code, when adding context to a specific line, use the "#" character at the end of the line of code you are commenting on
 - **Blank lines**: use blank lines to separate logical sections of code
 - **Naming conventions**: follow the naming conventions described above
