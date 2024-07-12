@@ -40,7 +40,7 @@ class AudioHandler:
             pygame.mixer.music.play() # Play the sound file
             while pygame.mixer.music.get_busy(): # Keep the script running until the audio is finished playing
                 pygame.time.Clock().tick(10)
-
+                
             # Stop playback and unload the mixer
             pygame.mixer.music.stop()
             pygame.mixer.quit()
