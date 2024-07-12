@@ -41,7 +41,7 @@ When you install, run, or use this software, you agree to the Code of Conduct in
 - **configuration_handler.py**: Contains the configuration handling code for the project
 - **pyinstaller_configuration.json**: Contains the configuration for PyInstaller
 - **requirements.txt**: Contains the required packages for the project
-
+- **.gitignore**: Contains the files and directories to be ignored by Git
 
 ```md 
 VVVVVVVV           VVVVVVVV            CCCCCCCCCCCCCCC         11111111111   
