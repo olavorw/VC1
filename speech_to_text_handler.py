@@ -16,11 +16,11 @@ class SpeechToTextHandler:
             # Use the microphone as source for input. Here we are using sr.Microphone() as source
             with sr.Microphone() as source:
                 # Wait for a second to let the recognizer adjust the energy threshold based on the surrounding noise level
-                print("[cyan]Adjusting...")
+                print(f"[cyan]Adjusting...")
                 # Adjust the recognizer sensitivity to ambient noise and record audio from the microphone
                 r.adjust_for_ambient_noise(source, duration=0.5)
                 # Indicate that the program is listening
-                print("[cyan]Listening...")
+                print(f"[cyan]Listening...")
                 # Listen to the user's input
                 audio = r.listen(source)
                 # Initialize text variable to handle scope issues
@@ -31,13 +31,13 @@ class SpeechToTextHandler:
                     # If some text was recognized, break the loop
                     if text:
                         # Indicate that the text was recognized
-                        print("[blue]Received: " + text)
+                        print(f"[blue]Received: " + text)
                         # Return text immediately after recognition
                         return text
                 # Handle exceptions
                 except sr.UnknownValueError:
                     # Indicate that the recognizer could not understand the audio
-                    print("[yellow]Google Speech Recognition could not understand audio, please try again...")
+                    print(f"[yellow]Google Speech Recognition could not understand audio, please try again...")
                     SpeechToTextHandler.listen_and_recognize()
                 except sr.RequestError as e:
                     # Indicate that the recognizer could not request results from Google Speech Recognition service

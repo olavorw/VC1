@@ -11,7 +11,7 @@ ConfigurationHandler.prompt_eula()
 # Check if VC1 is usable
 if WebHandler.check_if_usable() == False:
     # If VC1 is not usable, print a message and exit the program
-    print("[red]VC1 is currently unusable.[/red]")
+    print(f"[red]VC1 is currently unusable.[/red]")
     # Exit the program
     exit()
     # If VC1 is usable, print a message and continue
@@ -21,7 +21,7 @@ elif WebHandler.check_if_usable() == True:
 # If an error occurred while checking if VC1 is usable, print a message and exit the program
 else:
     # Print an error message
-    print("[red]An error occurred while checking if VC1 is usable. Please check your internet connection. Closing program...[/red]")
+    print(f"[red]An error occurred while checking if VC1 is usable. Please check your internet connection. Closing program...[/red]")
     # Exit the program
     exit()
 
@@ -35,16 +35,16 @@ WebHandler.check_for_updates(current_version)
 api_key = ConfigurationHandler.get_api_key()
 
 # Initialize the ElevenLabsSpeech object
-elevenlabs = ElevenLabsHandler(api_key)
+ElevenLabsHandler(api_key)
 
 # Initialize the audio player
-audio = AudioHandler()
+AudioHandler()
 
 # Initialize the SpeechRecognition object
-speech = SpeechToTextHandler()
+SpeechToTextHandler()
 
 # Ask the user for their ElevenLabs voice ID
-print("[yellow]Please enter your ElevenLabs voice ID...[/yellow]")
+print(f"[yellow]Please enter your ElevenLabs voice ID...[/yellow]")
 # Get the voice ID from the user using the ConfigurationHandler class
 voice_id = ConfigurationHandler.prompt_voice_id()
 # Let the user know that the voice ID has been selected
@@ -55,7 +55,7 @@ print(f"[green]Selected Voice ID: {voice_id}.[/green]")
 while True:
     
     # Get the recognized speech from the microphone using SpeechRecognition
-    result = speech.listen_and_recognize()
+    result = SpeechToTextHandler.listen_and_recognize()
     
     # Check if the result wants to access configuration files
     #if result.lower() == "configure":
@@ -65,7 +65,7 @@ while True:
     #    continue
     
     # Get the audio for the specified voice ID using ElevenLabsSpeech
-    audio_file = elevenlabs.generate(result, voice_id)
+    audio_file = ElevenLabsHandler.generate(result, voice_id)
     
     # Play the generated audio using AudioHandler
-    audio.play_audio(audio_file)
+    AudioHandler.play_audio(audio_file)

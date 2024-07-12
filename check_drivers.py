@@ -8,7 +8,7 @@ def play_sound(file_path, device_index):
 
         # Ensure the audio file has 1 channel (mono)
         if wf.getnchannels() != 1:
-            print("Audio file is not mono. Converting to mono...")
+            print(f"Audio file is not mono. Converting to mono...")
             mono_wave_file = 'mono_' + file_path
             convert_to_mono(file_path, mono_wave_file)
             wf = wave.open(mono_wave_file, 'rb')
@@ -18,7 +18,7 @@ def play_sound(file_path, device_index):
 
         # Print device info for debugging
         device_info = p.get_device_info_by_index(device_index)
-        print(device_info)
+        print(fdevice_info)
 
         # Open a stream with the virtual microphone as the output device
         stream = p.open(format=p.get_format_from_width(wf.getsampwidth()),

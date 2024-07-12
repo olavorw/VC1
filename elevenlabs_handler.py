@@ -14,7 +14,7 @@ class ElevenLabsHandler:
         )
 
     def generate(self, text, voice_id):
-        print("[yellow]Making a request to the ElevenLabs API, please wait...[/yellow]")
+        print(f"[yellow]Making a request to the ElevenLabs API, please wait...[/yellow]")
         # Generate audio using the ElevenLabs client
         audio = self.client.generate(
             text=text,
@@ -47,7 +47,7 @@ class ElevenLabsHandler:
             else:
                 return "valid"
         else:
-            print("Status not found")
+            print(f"Status not found")
 
     def check_api_key(api_key):
         url = "https://api.elevenlabs.io/v1/voices/"

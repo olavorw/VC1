@@ -4,22 +4,22 @@ This project is a voice changer application that utilizes advanced speech recogn
 
 ## Contact Methods
 
-If you have any questions or feel you need to reach out to me for any reason, don't hesitate to contact open a ticket in the [Discord](https://discord.gg/5QP6X3S5fq) server I've opened.
+If you have any questions or feel you need to reach out to me for any reason, don't hesitate to contact me. The best way to do this is to ping me in my [Discord server](https://discord.gg/5QP6X3S5fq).
 
 ## Prerequisites
 
-This software was developed and is intended for use on Windows machines. This was developed in Windows 11 in VSCode. It should work on Windows 10, if not, reach out to me. You will also need an ElevenLabs API key. [Elevenlabs](https://elevenlabs.io) is a paid service used to make the voices. You will also need a voice ID from ElevenLabs. You can get avoice from their voice library, or make your own. The most important part after all this is that you need [VBCable](https://vb-audio.com/Cable/) for the actual voice changing function. You can hear the audio and everything without it but to turn it into a microphone you need to download [VBCable](https://vb-audio.com/Cable/). I am working on my own virtual microphone at the moment, but in the meanwhile, you will need to use [VBCable](https://vb-audio.com/Cable/).
+This software was developed on Windows 11. It should work on Windows 10, if not, reach out to me. You will also need an ElevenLabs API key. [Elevenlabs](https://elevenlabs.io) is a paid service used to generate the AI audio for the voices. You will also need a voice ID from ElevenLabs. You can get a voice from their voice library, or make your own. Now, to use use the program as a microphone for applications, you'll need to download. [VBCable](https://vb-audio.com/Cable/). You can hear the audio and everything without it but to turn it into a microphone you need to download [VBCable](https://vb-audio.com/Cable/). I am working on my own virtual microphone at the moment, but in the meanwhile, you will need to use [VBCable](https://vb-audio.com/Cable/).
 
 ## Agreements
 
-Please take notice to the EULA and License before installation. By installing, running, or using this software, you agree to the EULA and acknowledge the M.I.T. license.
+When you install, run, or use this software, you agree to the license and permission notice found in the license.md file.
 
 ## Installation
 
 To install, you may watch my [video guide](https://olanorw.media/vc1install) or follow these three steps:
-    1. Extract the file
-    2. Launch the program
-    3. Follow instructions
+1. Extract the file
+2. Launch the program
+3. Follow instructions
 
 ```md 
 VVVVVVVV           VVVVVVVV            CCCCCCCCCCCCCCC         11111111111   

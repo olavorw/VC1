@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) 2024 Olanorw, Olav Sharma
+Copyright (c) 2024 Olanorw aslo known as Olav Sharma
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
