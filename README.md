@@ -16,15 +16,7 @@ This software was developed on Windows 11. It should work on Windows 10, if not,
 ## Agreements
 When you install, run, or use this software, you agree to the Code of Conduct in the CODE_OF_CONDUCT.md file, and License and Permission notice found in the LICENSE.md file.
 
-## File Structure
-### Directories
-- **[archive](/archive/)**: Contains archived files from the project
-- **[assets](/assets/)**: Contains assets used in the project
-- **[docs](/docs/)**: Contains documentation for the project
-- **[releases](/releases/)**: Contains releases of the project
-- **[testing](/testing/)**: Contains testing files for the project
-- **[unused](/unused/)**: Contains unused files from the project
-### Documents
+## Important Documents
 - **[CODE_OF_CONDUCT.md](./CODE_OF_CONDUCT.md)**: Contains the code of conduct for the project
 - **[CONTRIBUTING.md](./CONTRIBUTING.md)**: Contains guidelines for contributing to the project
 - **[ISSUES.md](./ISSUES.md)**: Contains a list of known issues for the project
