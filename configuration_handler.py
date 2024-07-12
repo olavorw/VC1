@@ -20,7 +20,7 @@ import json
 import time
 from tkinter import N
 from rich import print
-from elevenlabs_handler import ElevenLabsHandler
+from elevenlabs_handler import ElevenLabsHandler # This is to check the API key and voice ID, if you're not using ElevenLabs, you can remove this import and the functions that use it
 
 class ConfigurationHandler():
     config_file_path = 'config.json'
@@ -136,8 +136,7 @@ class ConfigurationHandler():
             print(f"[green]Code of Conduct, License and Permission notice will be prompted on startup.[/green]")
         ConfigurationHandler.write_config(config)
 
-    # Ask the user for their ElevenLabs API key
-    def prompt_api_key():
+    def prompt_api_key(): # This is to check the API key and voice ID, if you're not using ElevenLabs, you can remove this import and the functions that use it
         """
         Prompts the user to enter their ElevenLabs API key and saves it to the configuration file.
         
@@ -165,7 +164,7 @@ class ConfigurationHandler():
             print(f"[green]API key saved successfully. To change your API key, delete the config.json file.[/green]")
             return api_key
 
-    def get_api_key():
+    def get_api_key(): # This is to check the API key and voice ID, if you're not using ElevenLabs, you can remove this import and the functions that use it
         """
         Retrieves the ElevenLabs API key from the configuration file.
         
@@ -184,7 +183,7 @@ class ConfigurationHandler():
         else:
             return config.get('api_key') # Return the API key if it exists
     
-    def get_voice_ids():
+    def get_voice_ids(): # This is to check the API key and voice ID, if you're not using ElevenLabs, you can remove this import and the functions that use it
         """
         Retrieves the voice IDs from the configuration file.
         
@@ -200,7 +199,7 @@ class ConfigurationHandler():
         config = ConfigurationHandler.read_config()
         return config.get('voice_ids', {})  # Ensures a dictionary is returned even if 'voice_ids' does not exist
     
-    def prompt_voice_id():
+    def prompt_voice_id(): # This is to check the API key and voice ID, if you're not using ElevenLabs, you can remove this import and the functions that use it
         """
         Prompts the user to enter a new voice ID or select an existing voice ID and saves it to the configuration file.
         
