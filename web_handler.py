@@ -1,4 +1,3 @@
-# web_handler.py
 import requests
 from rich import print
 
@@ -32,8 +31,9 @@ class WebHandler:
 
 if __name__ == "__main__":
     print(f"[yellow]Testing outdated[/yellow]")
-    current_version = "0.5"
+    current_version = "0.45"
     WebHandler.check_for_updates(current_version)
 
     print(f"[yellow]Testing up-to-date[/yellow]")
+    current_version = "0.5"
     WebHandler.check_for_updates(current_version)

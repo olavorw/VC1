@@ -3,8 +3,7 @@ import wave
 
 def play_sound(file_path, device_index):
     try:
-        # Open the sound file
-        wf = wave.open(file_path, 'rb')
+        wf = wave.open(file_path, 'rb') # Open the sound file
 
         # Ensure the audio file has 1 channel (mono)
         if wf.getnchannels() != 1:
@@ -18,7 +17,7 @@ def play_sound(file_path, device_index):
 
         # Print device info for debugging
         device_info = p.get_device_info_by_index(device_index)
-        print(fdevice_info)
+        print(device_info)
 
         # Open a stream with the virtual microphone as the output device
         stream = p.open(format=p.get_format_from_width(wf.getsampwidth()),

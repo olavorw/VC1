@@ -3,21 +3,15 @@ from rich import print
 import os
 
 class AudioHandler:
-    def play_audio(file_path):
-        
-        # Notify the user to wait for the audio to play
+    def play_audio(file_path, deleteaudio):
         print(f"[yellow]Playing audio file, please wait...[/yellow]")
         
         try:
-            # Initialize the mixer
-            pygame.mixer.init()
             
-            # Load the sound file
-            pygame.mixer.music.load(file_path)
-
-            # Play the sound file
-            pygame.mixer.music.play()
-
+            pygame.mixer.init() # Initialize the mixer
+            pygame.mixer.music.load(file_path) # Load the sound file
+            
+            pygame.mixer.music.play() # Play the sound file
             # Keep the script running until the audio is finished playing
             while pygame.mixer.music.get_busy():
                 pygame.time.Clock().tick(10)
@@ -26,53 +20,43 @@ class AudioHandler:
             pygame.mixer.music.stop()
             pygame.mixer.quit()
         except:
-            # Handle error if the audio file is corrupt
             print(f"[red]Error playing audio file. This is probably because the file is corrupt.[/red]")
         
         # Delete the audio file
-        try:
-            print(f"[green]Audio file deleted, continuing recognition.[/green]")
-            os.remove(file_path)
-        except PermissionError:
-            # Handle error if unable to delete the audio file
-            print(f"[red]Error deleting audio file. Please delete the file manually.[/red]")
+        if deleteaudio == True:
+            try:
+                print(f"[green]Audio file dseleted, continuing recognition.[/green]")
+                os.remove(file_path)
+            except PermissionError:
+                print(f"[red]Error deleting audio file. Please delete the file manually.[/red]")
 
     def test_voice_id(file_path):
-        
-        # Notify the user to wait for the audio to play
-        print(f"[yellow]Playing test file, please wait...[/yellow]")
+        print(f"[yellow]Playing test file, please wait...[/yellow]") # Notify the user to wait for the audio to play
         
         try:
-            # Initialize the mixer
-            pygame.mixer.init()
             
-            # Load the sound file
-            pygame.mixer.music.load(file_path)
+            pygame.mixer.init() # Initialize the mixer
+            pygame.mixer.music.load(file_path) # Load the sound file
 
-            # Play the sound file
-            pygame.mixer.music.play()
-
-            # Keep the script running until the audio is finished playing
-            while pygame.mixer.music.get_busy():
+            
+            pygame.mixer.music.play() # Play the sound file
+            while pygame.mixer.music.get_busy(): # Keep the script running until the audio is finished playing
                 pygame.time.Clock().tick(10)
 
             # Stop playback and unload the mixer
             pygame.mixer.music.stop()
             pygame.mixer.quit()
         except:
-            # Handle error if the audio file cannot be played
             print(f"[red]Error playing audio file. This voice doesn't seem right.[/red]")
-            
-            return "error"
+            return "error" # Return error to signify the voice id doesn't work, or the file is corrupt. 
         
         # Delete the audio file
         try:
             print(f"[green]Audio file deleted, continuing recognition.[/green]")
             os.remove(file_path)
         except PermissionError:
-            # Handle error if unable to delete the audio file
             print(f"[red]Error deleting audio file. Please delete the file manually.[/red]")
 
 # Tests
 if __name__ == "__main__":
-    AudioHandler.play_audio("test.mp3")
+    AudioHandler.play_audio("./assets/audio/test.mp3", False)
