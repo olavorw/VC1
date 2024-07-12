@@ -43,7 +43,7 @@ When you install, run, or use this software, you agree to the Code of Conduct in
 - **requirements.txt**: Contains the required packages for the project
 - **.gitignore**: Contains the files and directories to be ignored by Git
 
-```md 
+``` 
 __/\\\________/\\\_        ________/\\\\\\\\\_        ______/\\\_        
  _\/\\\_______\/\\\_        _____/\\\////////__        __/\\\\\\\_       
   _\//\\\______/\\\__        ___/\\\/___________        _\/////\\\_      
