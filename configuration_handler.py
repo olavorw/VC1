@@ -23,6 +23,23 @@ from rich import print
 from elevenlabs_handler import ElevenLabsHandler # This is to check the API key and voice ID, if you're not using ElevenLabs, you can remove this import and the functions that use it
 
 class ConfigurationHandler():
+    """
+    A class to handle configuration for software tailored to the VC1 project.
+    
+    Attributes:
+    config_file_path (str): The path to the configuration file.
+    
+    Methods:
+    read_config(): Reads the configuration file and returns the data as a dictionary.
+    rewrite_config(data): Writes the provided data to the configuration file.
+    write_config(data): Writes the provided data to the configuration file.
+    prompt_agreements(): Prompts the user to accept the Code of Conduct, License, and Permission notice and possibly writes to the config.json file.
+    prompt_api_key(): Prompts the user to enter their ElevenLabs API key and saves it to the configuration file.
+    get_api_key(): Retrieves the ElevenLabs API key from the configuration file.
+    get_voice_ids(): Retrieves the voice IDs from the configuration file.
+    prompt_voice_id(): Prompts the user to enter a new voice ID or select an existing voice ID and saves it to the configuration file.
+    remove_config_item(item): Removes an item from the configuration file.
+    """
     config_file_path = 'config.json'
 
     def read_config():

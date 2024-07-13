@@ -21,6 +21,16 @@ from rich import print
 import os
 
 class AudioHandler:
+    """
+    A class to handle audio playback using the pygame library tailored to the VC1 project.
+    
+    Attributes:
+    None
+    
+    Methods:
+    play_audio(file_path, deleteaudio): Play an audio file using the pygame library.
+    test_voice_id(file_path): Test a voice ID by playing a test audio file.
+    """
     @staticmethod
     def play_audio(file_path, deleteaudio):
         """

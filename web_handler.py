@@ -20,6 +20,17 @@ import requests
 from rich import print
 
 class WebHandler:
+    """
+    A class to handle web interactions tailored to the VC1 project.
+    
+    Attributes:
+    None
+    
+    Methods:
+    check_for_updates(current_version): Check for updates to VC1 by comparing the current version with the latest version available on the website.
+    notify_update(latest_version): Notify the user that a new version of VC1 is available.
+    check_if_usable(): Check if VC1 is usable by pinging the website.
+    """
     @staticmethod
     def check_for_updates(current_version):
         """

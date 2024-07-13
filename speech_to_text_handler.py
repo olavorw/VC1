@@ -21,6 +21,15 @@ from rich import print
 
 # Define the SpeechToTextHandler class
 class SpeechToTextHandler:
+    """
+    A class to handle speech recognition using the Google Web Speech API.
+    
+    Attributes:
+    None
+    
+    Methods:
+    listen_and_recognize(): Listen to the user's speech and recognize it using Google Web Speech API.
+    """
     @staticmethod
     def listen_and_recognize():
         """

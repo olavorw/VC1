@@ -22,10 +22,20 @@ from rich import print
 import time
 import requests
 import re
-import unittest
 
 # Define the ElevenLabsHandler class
 class ElevenLabsHandler:
+    """
+    A class to handle interactions with the ElevenLabs API.
+    
+    Attributes:
+    client (ElevenLabs): The ElevenLabs client object.
+    
+    Methods:
+    generate(text, voice_id): Generate audio using the ElevenLabs API.
+    check_voice_status(voice_id, api_key): Check the status of a voice ID using the ElevenLabs API.
+    check_api_key(api_key): Check the validity of an API key using the ElevenLabs API.
+    """
     def __init__(self, api_key):
         """
         Initialize the ElevenLabsHandler class with the provided API key.
