@@ -42,6 +42,9 @@ def show_w():
     with open('CODE_OF_CONDUCT.md', 'r') as file:
         code_of_conduct = file.read()
         print(f"[bold white]\n" + code_of_conduct)
+    with open('LICENSE.md', 'r') as file:
+        license = file.read()
+        print(f"[white]\n" + license)
 
 def show_c():
     """
@@ -59,7 +62,9 @@ def show_c():
     with open('LICENSE.md', 'r') as file:
         license = file.read()
         print(f"[white]\n" + license)
-    print(f"\n[bold white]Please wait...[/yellow]\n")
+    with open('CODE_OF_CONDUCT.md', 'r') as file:
+        code_of_conduct = file.read()
+        print(f"[bold white]\n" + code_of_conduct)
 
 print(f"[bold white]__/\\\\\\________/\\\\\\_        ________/\\\\\\\\\\\\\\\\\\_        ______/\\\\\\_\n _\\/\\\\\\_______\\/\\\\\\_        _____/\\\\\\////////__        __/\\\\\\\\\\\\\\_\n  _\\//\\\\\\______/\\\\\\__        ___/\\\\\\/___________        _\\/////\\\\\\_\n   __\\//\\\\\\____/\\\\\\___        __/\\\\\\_____________        _____\\/\\\\\\_\n    ___\\//\\\\\\__/\\\\\\____        _\\/\\\\\\_____________        _____\\/\\\\\\_\n     ____\\//\\\\\\/\\\\\\_____        _\\//\\\\\\____________        _____\\/\\\\\\_\n      _____\\//\\\\\\\\\\______        __\\///\\\\\\__________        _____\\/\\\\\\_\n       ______\\//\\\\\\_______        ____\\////\\\\\\\\\\\\\\\\\\_        _____\\/\\\\\\_\n        _______\\///________        _______\\/////////__        _____\\///_\n")
 
