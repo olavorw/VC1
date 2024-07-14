@@ -73,12 +73,13 @@ time.sleep(3)
 Config = ConfigurationHandler
 Config.prompt_agreements() # Prompt the user to accept the EULA
 
-if WebHandler.check_if_usable() == False:
+Online = WebHandler
+if Online.check_if_usable() == False:
     
     print(f"[red]VC1 is currently unusable.[/red]")
     exit()
   
-elif WebHandler.check_if_usable() == True: # If VC1 is usable, continue  
+elif Online.check_if_usable() == True: # If VC1 is usable, continue  
     pass
 else: # If an error occurred while checking if VC1 is usable, print a message and exit the program
     print(f"[red]An error occurred while checking if VC1 is usable. Please check your internet connection. Closing program...[/red]")
@@ -86,14 +87,13 @@ else: # If an error occurred while checking if VC1 is usable, print a message an
 
 # Check for updates
 current_version = '0.5'
-WebHandler.check_for_updates(current_version)
-
+Online.check_for_updates(current_version)
 
 api_key = Config.get_api_key() # Get or prompt for the API key for initializing the ElevenLabs client
 
 TTS = ElevenLabsHandler(api_key)
-Audio = AudioHandler()
 STT = SpeechToTextHandler()
+Audio = AudioHandler()
 
 # Get the voice ID
 print(f"[yellow]Please enter your ElevenLabs voice ID...[/yellow]")
