@@ -46,7 +46,11 @@ class SpeechToTextHandler:
         str: The recognized text from the user's speech.
         """
         # Initialize recognizer class (for recognizing the speech)
-        r = sr.Recognizer()
+        try:
+            r = sr.Recognizer()
+        except Exception as e:
+            print(f"[red]An error occurred while trying to initialize the recognizer class. Error: {e}[/red]")
+            return SpeechToTextHandler.listen_and_recognize()
 
         # Start a loop that will run until the user's speech is recognized
         while True:  

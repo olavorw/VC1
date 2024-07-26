@@ -49,9 +49,12 @@ class ElevenLabsHandler:
         Returns:
         None
         """
-        self.client = ElevenLabs(
-            api_key=api_key # Initialize the ElevenLabs client with the provided API key
-        )
+        try:
+            self.client = ElevenLabs(
+                api_key=api_key # Initialize the ElevenLabs client with the provided API key
+            )
+        except Exception as e:
+            print(f"[red]An error occurred while trying to initialize the ElevenLabs client. Error: {e}[/red]")
     
     def generate(self, text, voice_id):
         """
@@ -67,18 +70,26 @@ class ElevenLabsHandler:
         Returns:
         str: The file name of the generated audio.
         """
-        print(f"[yellow]Making a request to the ElevenLabs API, please wait...[/yellow]")
-        # Generate audio using the ElevenLabs client
-        audio = self.client.generate(
-            text=text,
-            voice=voice_id,
-            model="eleven_turbo_v2"
-        )
+        try:
+            print(f"[yellow]Making a request to the ElevenLabs API, please wait...[/yellow]")
+            # Generate audio using the ElevenLabs client
+            audio = self.client.generate(
+                text=text,
+                voice=voice_id,
+                model="eleven_turbo_v2"
+            )
+        except Exception as e:
+            print(f"[red]An error occurred while trying to generate audio. Error: {e}[/red]")
+            return ElevenLabsHandler.generate(text, voice_id)
         
-        # Save the generated audio to a file
-        timestamp = str(int(time.time()))
-        file_name = timestamp + '.mp3'
-        save(audio, file_name)
+        try:
+            # Save the generated audio to a file
+            timestamp = str(int(time.time()))
+            file_name = timestamp + '.mp3'
+            save(audio, file_name)
+        except Exception as e:
+            print(f"[red]An error occurred while trying to save the audio. Error: {e}[/red]")
+            return ElevenLabsHandler.generate(text, voice_id)
         
         return file_name
     
@@ -99,9 +110,13 @@ class ElevenLabsHandler:
         url = "https://api.elevenlabs.io/v1/voices/" + voice_id + "/"
         headers = {"xi-api-key": api_key}
 
-        response = requests.request("GET", url, headers=headers)
-        json_string = response.text
-        match = re.search(r'"status":"(.*?)"', json_string)
+        try:
+            response = requests.request("GET", url, headers=headers)
+            json_string = response.text
+            match = re.search(r'"status":"(.*?)"', json_string)
+        except Exception as e:
+            print(f"[red]An error occurred while trying to check the voice status. Error: {e}[/red]")
+            return ElevenLabsHandler.check_voice_status(voice_id, api_key)
         
         if match:
             status = match.group(1)
@@ -127,7 +142,12 @@ class ElevenLabsHandler:
         """
         url = "https://api.elevenlabs.io/v1/voices/"
         headers = {"xi-api-key": api_key}
-        response = requests.request("GET", url, headers=headers)
+        
+        try:
+            response = requests.request("GET", url, headers=headers)
+        except Exception as e:
+            print(f"[red]An error occurred while trying to check the API key. Error: {e}[/red]")
+            return ElevenLabsHandler.check_api_key(api_key)
         
         if response.text == '{"detail":{"status":"invalid_api_key","message":"Invalid API key"}}':
             return "invalid"

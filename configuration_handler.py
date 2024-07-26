@@ -82,8 +82,11 @@ class ConfigurationHandler():
         Returns:
         None
         """
-        with open(ConfigurationHandler.config_file_path, 'w') as file:
-            json.dump(data, file)
+        try:
+            with open(ConfigurationHandler.config_file_path, 'w') as file:
+                json.dump(data, file)
+        except Exception as e:
+            print(f"[red]An error occurred while trying to rewrite the configuration file. Error: {e}[/red]")
 
     def write_config(data):
         """
@@ -98,11 +101,14 @@ class ConfigurationHandler():
         Returns:
         None
         """
-        existing_data = ConfigurationHandler.read_config()
+        try:
+            existing_data = ConfigurationHandler.read_config()
         
-        existing_data.update(data)  # Merge new data with existing data
-        with open(ConfigurationHandler.config_file_path, 'w') as file:
-            json.dump(existing_data, file)
+            existing_data.update(data)  # Merge new data with existing data
+            with open(ConfigurationHandler.config_file_path, 'w') as file:
+                json.dump(existing_data, file)
+        except Exception as e:
+            print(f"[red]An error occurred while trying to write to the configuration file. Error: {e}[/red]")
 
     def prompt_agreements():
         """
