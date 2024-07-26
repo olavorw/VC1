@@ -18,6 +18,7 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 import json
 import time
+import os
 from tkinter import N
 from rich import print
 from elevenlabs_handler import ElevenLabsHandler # This is to check the API key and voice ID, if you're not using ElevenLabs, you can remove this import and the functions that use it
@@ -55,6 +56,11 @@ class ConfigurationHandler():
         Returns:
         dict: The configuration data
         """
+        if not os.path.exists(ConfigurationHandler.config_file_path):
+            with open(ConfigurationHandler.config_file_path, 'w') as file:
+                default_config = {'license': 'false', 'dontShowAgain': 'false'} # Default configuration data
+                json.dump(default_config, file)
+
         try:
             with open(ConfigurationHandler.config_file_path, 'r') as file:
                 config = json.load(file)

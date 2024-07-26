@@ -104,9 +104,9 @@ print(f"[green]Selected Voice ID: {voice_id}.[/green]") # Let the user know that
 while True:
     result = STT.listen_and_recognize() # Get the recognized speech from the microphone using SpeechRecognition
     
-    if result == "show w":
+    if str.lower(result) == "show w":
         show_w()
-    elif result == "show c":
+    elif str.lower(result) == "show c" or "chelsea" or "josie": # Google may detect "show c" as "chelsea" or "josie" sometimes
         show_c()
 
     audio_file = TTS.generate(result, voice_id) # Get the audio for the specified voice ID using ElevenLabsSpeech

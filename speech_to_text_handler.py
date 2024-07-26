@@ -17,6 +17,7 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 """
 
 import speech_recognition as sr
+import time
 from rich import print
 
 # Define the SpeechToTextHandler class
@@ -65,19 +66,22 @@ class SpeechToTextHandler:
                     # Using Google Web Speech API to recognize audio
                     text = r.recognize_google(audio)
                     # If some text was recognized, break the loop
-                    if text:
+                except sr.UnknownValueError:
+                    # Indicate that the recognizer could not understand the audio
+                    print(f"[yellow]Google Speech Recognition could not understand audio, please try again...")
+                    time.sleep(0.1)
+                    return SpeechToTextHandler.listen_and_recognize()
+                except sr.RequestError as e:
+                    # Indicate that the recognizer could not request results from Google Speech Recognition service
+                    print(f"Could not request results from Google Speech Recognition service; {e}")
+                    time.sleep(0.1)
+                    return SpeechToTextHandler.listen_and_recognize()
+                if text:
                         # Indicate that the text was recognized
                         print(f"[blue]Received: " + text)
                         # Return text immediately after recognition
                         return text
                 # Handle exceptions
-                except sr.UnknownValueError:
-                    # Indicate that the recognizer could not understand the audio
-                    print(f"[yellow]Google Speech Recognition could not understand audio, please try again...")
-                    SpeechToTextHandler.listen_and_recognize()
-                except sr.RequestError as e:
-                    # Indicate that the recognizer could not request results from Google Speech Recognition service
-                    print(f"Could not request results from Google Speech Recognition service; {e}")
 
 # Tests
 if __name__ == '__main__':

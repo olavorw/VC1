@@ -105,7 +105,7 @@ class ElevenLabsHandler:
         
         if match:
             status = match.group(1)
-            if status == "voice_not_found" or "invalid_uid":
+            if status == "voice_not_found":
                 return "invalid"
             else:
                 return "valid"
