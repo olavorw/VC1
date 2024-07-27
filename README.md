@@ -25,6 +25,7 @@ When you install, run, or use this software, you agree to the Code of Conduct in
 - **[ROADMAP.md](./ROADMAP.md)**: Contains future plans for the project
 - **[STYLEGUIDE.md](./STYLEGUIDE.md)**: Contains style guidelines for the project
 - **[TODO.md](./TODO.md)**: Contains a list of tasks that need to be completed
+- **[INSTALLER_LICENSE.md](./INSTALLER_LICENSE.txt)**: Contains the license for the installer
 
 ``` 
 __/\\\________/\\\_        ________/\\\\\\\\\_        ______/\\\_        
