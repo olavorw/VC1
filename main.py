@@ -86,6 +86,7 @@ try:
     Config.prompt_agreements() # Prompt the user to accept the EULA
 except Exception as e:
     print(f"[red]An error occurred while trying to prompt the user to accept the EULA. Error: {e}[/red]")
+    exit()
 
 try:
     print("Loading WebHandler...")
@@ -134,7 +135,7 @@ try:
     
         if str.lower(result) == "show w":
             show_w()
-        elif str.lower(result) == "show c" or "chelsea" or "josie": # Google may detect "show c" as "chelsea" or "josie" sometimes
+        elif str.lower(result) == "show c" or str.lower(result) == "chelsea" or str.lower(result) == "josie": # Google may detect "show c" as "chelsea" or "josie" sometimes
             show_c()
 
         audio_file = TTS.generate(result, voice_id) # Get the audio for the specified voice ID using ElevenLabsSpeech

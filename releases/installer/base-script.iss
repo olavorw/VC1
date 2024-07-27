@@ -2,15 +2,15 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "VC1"
-#define MyAppVersion "v0.44-alpha"
-#define MyAppPublisher "Olanorw also known as Olav Sharma"
-#define MyAppURL "https://olanorw.com/"
+#define MyAppVersion "v0.75-alpha"
+#define MyAppPublisher "Olanorw or Olav Sharma"
+#define MyAppURL "https://www.olanorw.com/projects/VC1"
 #define MyAppExeName "VC1.exe"
 
 [Setup]
 ; NOTE: The value of AppId uniquely identifies this application. Do not use the same AppId value in installers for other applications.
 ; (To generate a new GUID, click Tools | Generate GUID inside the IDE.)
-AppId={{4266B6D5-8270-47A8-9CF0-05FC24848427}
+AppId={
 AppName={#MyAppName}
 AppVersion={#MyAppVersion}
 ;AppVerName={#MyAppName} {#MyAppVersion}
@@ -18,7 +18,7 @@ AppPublisher={#MyAppPublisher}
 AppPublisherURL={#MyAppURL}
 AppSupportURL={#MyAppURL}
 AppUpdatesURL={#MyAppURL}
-DefaultDirName={autopf}\{#MyAppName}
+DefaultDirName={autopf}\VC1
 ; "ArchitecturesAllowed=x64compatible" specifies that Setup cannot run
 ; on anything but x64 and Windows 11 on Arm.
 ArchitecturesAllowed=x64compatible
@@ -28,10 +28,10 @@ ArchitecturesAllowed=x64compatible
 ; the 64-bit view of the registry.
 ArchitecturesInstallIn64BitMode=x64compatible
 DisableProgramGroupPage=yes
-LicenseFile=C:\Users\olavs\OneDrive\Documents\Programming\voicechanger\releases\v0.44-alpha\installer_docs\EULA.txt
+LicenseFile=C:\Users\olavs\OneDrive\Documents\Programming\voicechanger\releases\v0.5-alpha\EULA.txt
 ; Uncomment the following line to run in non administrative install mode (install for current user only.)
 ;PrivilegesRequired=lowest
-OutputBaseFilename=VC1
+OutputBaseFilename=VC1_Installer
 SetupIconFile=C:\Users\olavs\OneDrive\Documents\Programming\voicechanger\assets\logo\VC1.ico
 Compression=lzma
 SolidCompression=yes
@@ -44,18 +44,14 @@ Name: "english"; MessagesFile: "compiler:Default.isl"
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
 [Files]
-Source: "C:\Users\olavs\OneDrive\Documents\Programming\voicechanger\releases\v0.44-alpha\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\olavs\OneDrive\Documents\Programming\voicechanger\releases\v0.44-alpha\_internal\*"; DestDir: "{app}\_internal"; Flags: ignoreversion recursesubdirs createallsubdirs
-Source: "C:\Users\olavs\OneDrive\Documents\Programming\voicechanger\releases\v0.44-alpha\CODE_OF_CONDUCT.md"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\olavs\OneDrive\Documents\Programming\voicechanger\releases\v0.44-alpha\EULA.md"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\olavs\OneDrive\Documents\Programming\voicechanger\releases\v0.44-alpha\LICENSE.md"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\olavs\OneDrive\Documents\Programming\voicechanger\releases\v0.44-alpha\README.md"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\olavs\OneDrive\Documents\Programming\voicechanger\releases\v0.5-alpha\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\olavs\OneDrive\Documents\Programming\voicechanger\releases\v0.5-alpha\_internal\*"; DestDir: "{app}\_internal"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "C:\Users\olavs\OneDrive\Documents\Programming\voicechanger\releases\v0.5-alpha\EULA.txt"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\olavs\OneDrive\Documents\Programming\voicechanger\releases\v0.5-alpha\LICENSE.txt"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\olavs\OneDrive\Documents\Programming\voicechanger\releases\v0.5-alpha\README.md"; DestDir: "{app}"; Flags: ignoreversion
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Icons]
 Name: "{autoprograms}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"
 Name: "{autodesktop}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"; Tasks: desktopicon
-
-[Run]
-Filename: "{app}\{#MyAppExeName}"; Description: "{cm:LaunchProgram,{#StringChange(MyAppName, '&', '&&')}}"; Flags: nowait postinstall skipifsilent
 
