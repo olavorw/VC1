@@ -56,6 +56,7 @@ class ElevenLabsHandler:
         except Exception as e:
             print(f"[red]An error occurred while trying to initialize the ElevenLabs client. Error: {e}[/red]")
     
+    @staticmethod
     def generate(self, text, voice_id):
         """
         Generate audio using the ElevenLabs API.
@@ -76,7 +77,7 @@ class ElevenLabsHandler:
             audio = self.client.generate(
                 text=text,
                 voice=voice_id,
-                model="eleven_turbo_v2"
+                model="eleven_turbo_v2.5"
             )
         except Exception as e:
             print(f"[red]An error occurred while trying to generate audio. Error: {e}[/red]")
@@ -156,4 +157,5 @@ class ElevenLabsHandler:
         
 # Tests
 if __name__ == "__main__":
-    pass
+    el = ElevenLabsHandler("")
+    el.generate("Hello, world!", "")
