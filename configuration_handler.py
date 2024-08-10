@@ -19,7 +19,6 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 import json
 import time
 import os
-from tkinter import N
 from rich import print
 from elevenlabs_handler import ElevenLabsHandler # This is to check the API key and voice ID, if you're not using ElevenLabs, you can remove this import and the functions that use it
 
