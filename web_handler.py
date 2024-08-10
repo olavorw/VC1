@@ -99,5 +99,5 @@ if __name__ == "__main__":
     WebHandler.check_for_updates(current_version)
 
     print(f"[yellow]Testing up-to-date[/yellow]")
-    current_version = "0.5"
+    current_version = "0.9"
     WebHandler.check_for_updates(current_version)
