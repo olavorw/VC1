@@ -1,6 +1,7 @@
 import pygame
 import sys
 import io
+import time
 
 # Initialize Pygame
 pygame.init()
@@ -22,12 +23,18 @@ button_x = 10  # X position for the button (left side of the sidebar)
 button_y = 5  # Y position for the button (top of the sidebar)
 
 # Font settings for console
-font = pygame.font.SysFont("Consolas", 16, bold=True)
+# Changing to "DejaVu Sans Mono" with a slightly larger font size
+font = pygame.font.SysFont("DejaVu Sans Mono", 20, bold=False)
+
 input_text = ''
 console_lines = []
+input_active = False  # Flag to control whether input is allowed
+cursor_visible = True  # To control cursor blinking
+cursor_blink_time = 500  # Cursor blink time in milliseconds
+last_blink = pygame.time.get_ticks()  # Track time for blinking
 
 def draw_console():
-    console_surface = pygame.Surface((console_width, screen_height - 50))
+    console_surface = pygame.Surface((console_width, screen_height - 30))
     console_surface.fill((12, 12, 12))  # Console background color
 
     # Draw the console output lines
@@ -40,17 +47,37 @@ def draw_console():
     screen.blit(console_surface, (console_x, 0))
 
 def draw_input_box():
-    input_box_surface = pygame.Surface((console_width, 50))
-    input_box_surface.fill((12, 12, 12))  # Input box background color
+    global cursor_visible, last_blink
+    
+    input_box_surface = pygame.Surface((console_width, 30))
+    input_box_surface.fill((23, 23, 23))  # Input box background color
+
+    # Blinking cursor logic
+    if pygame.time.get_ticks() - last_blink > cursor_blink_time:
+        cursor_visible = not cursor_visible
+        last_blink = pygame.time.get_ticks()
+
+    # Append cursor to input text if visible and input is active
+    display_text = input_text + ('_' if cursor_visible and input_active else '')
 
     # Draw the current input text
-    rendered_input = font.render(input_text, True, (204, 204, 204))
-    input_box_surface.blit(rendered_input, (10, 10))
+    rendered_input = font.render(display_text, True, (204, 204, 204))
+    input_box_surface.blit(rendered_input, (10, 5))
 
-    screen.blit(input_box_surface, (console_x, screen_height - 50))
+    screen.blit(input_box_surface, (console_x, screen_height - 30))
 
 def add_console_line(text):
     console_lines.append(text)
+    if len(console_lines) > 1000:  # Prevent memory issues by keeping only the last 1000 lines
+        console_lines.pop(0)
+
+def request_input():
+    global input_active
+    input_active = True
+
+def stop_input():
+    global input_active
+    input_active = False
 
 class ConsoleStream(io.StringIO):
     def __init__(self):
@@ -71,8 +98,16 @@ class ConsoleStream(io.StringIO):
 sys.stdout = ConsoleStream()
 sys.stderr = ConsoleStream()
 
+# Example of how to use request_input
+# You can call this in your code to start capturing input
+def example_function():
+    print("Example function output:")
+    request_input()
+
 # Main loop
 running = True
+example_function()  # Call example function to test input capturing
+
 while running:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -84,10 +119,11 @@ while running:
                 if button_x <= mouse_pos[0] <= button_x + api_key_icon.get_width() and \
                    button_y <= mouse_pos[1] <= button_y + api_key_icon.get_height():
                     print("API Key button clicked!")
-        elif event.type == pygame.KEYDOWN:
+        elif event.type == pygame.KEYDOWN and input_active:
             if event.key == pygame.K_RETURN:
                 print(f'> {input_text}')
                 input_text = ''
+                stop_input()  # Stop input after Enter is pressed
             elif event.key == pygame.K_BACKSPACE:
                 input_text = input_text[:-1]
             else:

@@ -109,7 +109,7 @@ class ConfigurationHandler():
         except Exception as e:
             print(f"[red]An error occurred while trying to write to the configuration file. Error: {e}[/red]")
 
-    def prompt_agreements():
+    def prompt_agreements(self):
         """
         Prompts the user to accept the Code of Conduct, License, and Permission notice and possibly writes to the config.json file.
         
@@ -194,7 +194,7 @@ class ConfigurationHandler():
             print(f"[green]API key saved successfully. To change your API key, delete the config.json file.[/green]")
             return api_key
 
-    def get_api_key(): # This is to check the API key and voice ID, if you're not using ElevenLabs, you can remove this import and the functions that use it
+    def get_api_key(self): # This is to check the API key and voice ID, if you're not using ElevenLabs, you can remove this import and the functions that use it
         """
         Retrieves the ElevenLabs API key from the configuration file.
         
