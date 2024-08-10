@@ -1,4 +1,5 @@
-# Code of Conduct
+# CODE OF CONDUCT
+
 ## 1. Introduction
 This Code of Conduct ("Agreement") is a legal agreement, and should be treated like an "EULA" or "End User License Agreement" despite taking the name "Code of Conduct". The License is also part of this agreement and can be found in the [LICENSE.md](./LICENSE.md) file. This agreement is between you (either an individual or a single entity) and Olanorw aka Olav Sharma ("Company", "we", "us", or "our") for the software product identified above, which includes computer software and may include associated media, printed materials, and "online" or electronic documentation ("Software"). An important note is that whenever Olanorw is mentioned in this project or elsewhere, the person behind the persona or name "Olanorw" is "Olav Sharma". Any time documents or files say "aka", it means "also known as". This is to clarify that Olanorw and Olav Sharma are the same person."
 
