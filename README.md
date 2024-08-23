@@ -2,7 +2,7 @@
 This project is a voice changer application that utilizes advanced speech recognition technology and ElevenLabs' API to alter the user's voice in real-time. It's designed for users looking to have fun with voice modifications and for developers interested in exploring voice synthesis and transformation technologies.
 
 ## Installation
-To install, you may watch my [video guide](https://olanorw.media/vc1install) or follow these three steps:
+To install, you may watch my [video guide](https://olavorw.media/vc1install) or follow these three steps:
 1. Extract the file
 2. Launch the program
 3. Follow instructions
