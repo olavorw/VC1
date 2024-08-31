@@ -1,6 +1,6 @@
 """
 VC1 - VC1 - Voice Command 1
-Copyright (C) 2024  Olanorw aka Olav Sharma
+Copyright (C) 2024  Olav Sharma
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by

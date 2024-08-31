@@ -45,7 +45,7 @@ The ones that I typically include are:
 ```python
 """
 VC1 - Voice Command 1
-Copyright (C) 2024  Olanorw aka Olav Sharma
+Copyright (C) 2024  Olav Sharma
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -63,4 +63,4 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 ```
 
 ## Contributors
-- **Olanorw aka Olav Sharma**: Project Lead
+- **Olav Sharma**: Project Lead
