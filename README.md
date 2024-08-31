@@ -27,6 +27,10 @@ When you install, run, or use this software, you agree to the Code of Conduct in
 - **[TODO.md](./TODO.md)**: Contains a list of tasks that need to be completed
 - **[INSTALLER_LICENSE.md](./INSTALLER_LICENSE.txt)**: Contains the license for the installer
 
+## Development Squadron
+- Olav AKA Olavorw; Project Lead, Developer, and Designer
+*- Tacolotl; Developer, Bug Hunter, and Tester* (Not yet confirmed, Invited)
+
 ``` 
 __/\\\________/\\\_        ________/\\\\\\\\\_        ______/\\\_        
  _\/\\\_______\/\\\_        _____/\\\////////__        __/\\\\\\\_       
