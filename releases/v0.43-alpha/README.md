@@ -12,11 +12,11 @@ This software was developed and is intended for use on Windows machines. This wa
 
 ## Agreements
 
-Please take notice to the [Code of Conduct](https://github.com/olanorw/voicechanger?tab=coc-ov-file) and License before installation. By installing, running, or using this software, you agree to the [Code of Conduct](https://github.com/olanorw/voicechanger?tab=coc-ov-file) and acknowledge the license.
+Please take notice to the [Code of Conduct](https://github.com/Olavorw/voicechanger?tab=coc-ov-file) and License before installation. By installing, running, or using this software, you agree to the [Code of Conduct](https://github.com/Olavorw/voicechanger?tab=coc-ov-file) and acknowledge the license.
 
 ## Installation
 
-To install, you may watch my [video guide](https://olanorw.media/vc1install) or follow these three steps:
+To install, you may watch my [video guide](https://Olavorw.media/vc1install) or follow these three steps:
     1. Extract the file
     2. Launch the program
     3. Follow instructions

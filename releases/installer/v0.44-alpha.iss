@@ -3,10 +3,10 @@
 
 #define MyAppName "VC1"
 #define MyAppVersion "v0.44-alpha"
-#define MyAppPublisher "Olanorw also known as Olav Sharma"
-#define MyAppURL "https://olanorw.com/"
-#define ProjectPage "https://olanorw.com/projects/VC1/"
-#define Github "https://github.com/olanorw/VC1"
+#define MyAppPublisher "Olavorw also known as Olav Sharma"
+#define MyAppURL "https://Olavorw.com/"
+#define ProjectPage "https://Olavorw.com/projects/VC1/"
+#define Github "https://github.com/Olavorw/VC1"
 #define MyAppExeName "VC1.exe"
 
 [Setup]

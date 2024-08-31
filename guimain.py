@@ -128,7 +128,7 @@ sys.stderr = ConsoleStream()
 
 # Main logic from the second script
 def main_logic():
-    print(f"\n[yellow]VC1 Copyright (C) 2024  Olanorw and Olav Sharma This program comes with ABSOLUTELY NO WARRANTY; for details say `show w'. This is free software, and you are welcome to redistribute it under certain conditions; say `show c' for details.\n")
+    print(f"\n[yellow]VC1 Copyright (C) 2024  Olav Sharma This program comes with ABSOLUTELY NO WARRANTY; for details say `show w'. This is free software, and you are welcome to redistribute it under certain conditions; say `show c' for details.\n")
 
     def show_w():
         try:

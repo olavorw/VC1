@@ -16,7 +16,7 @@ Please take notice to the EULA and License before installation. By installing, r
 
 ## Installation
 
-To install, you may watch my [video guide](https://olanorw.media/vc1install) or follow these three steps:
+To install, you may watch my [video guide](https://Olavorw.media/vc1install) or follow these three steps:
     1. Extract the file
     2. Launch the program
     3. Follow instructions

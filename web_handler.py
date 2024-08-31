@@ -46,7 +46,7 @@ class WebHandler:
         None
         """
         try:
-            response = requests.get("https://olanorw.com/projects/vc1/version.json")
+            response = requests.get("https://Olavorw.com/projects/vc1/version.json")
             latest_version = response.text.strip()
             if current_version < latest_version:
                 WebHandler.notify_update(latest_version)
@@ -67,7 +67,7 @@ class WebHandler:
         Returns:
         None
         """
-        print(f"[yellow]A new version of VC1 is available! [cyan]{latest_version}[/cyan]\n[yellow]You can download it from [cyan]https://olanorw.com/projects/vc1/download[/cyan]")
+        print(f"[yellow]A new version of VC1 is available! [cyan]{latest_version}[/cyan]\n[yellow]You can download it from [cyan]https://Olavorw.com/projects/vc1/download[/cyan]")
     
     @staticmethod
     def check_if_usable():
@@ -84,7 +84,7 @@ class WebHandler:
         bool: True if VC1 is usable, False if VC1 is unusable, 'error' if an error occurred.
         """
         try:
-            response = requests.get("https://olanorw.com/projects/vc1/usable.json")
+            response = requests.get("https://Olavorw.com/projects/vc1/usable.json")
             if response.status_code == 200:
                 return True
             else:
