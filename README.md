@@ -29,7 +29,7 @@ When you install, run, or use this software, you agree to the Code of Conduct in
 
 ## Development Squadron
 - Olav AKA Olavorw; Project Lead, Developer, and Designer
-*- Tacolotl; Developer, Bug Hunter, and Tester* (Not yet confirmed, Invited)
+- Tacolotl; Developer, Bug Hunter, and Tester (Not yet confirmed, Invited)
 
 ``` 
 __/\\\________/\\\_        ________/\\\\\\\\\_        ______/\\\_        
