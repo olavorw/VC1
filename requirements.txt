@@ -10,6 +10,5 @@ asyncio
 pygame
 elevate
 elevenlabs
-pythonnet
-pytest
-unittest
+setuptools
+python-dotenv

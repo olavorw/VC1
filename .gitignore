@@ -160,3 +160,10 @@ cython_debug/
 #.idea/
 /vc1env
 /.vs
+/.idea/.gitignore
+/.idea/codeStyles/codeStyleConfig.xml
+/.idea/misc.xml
+/.idea/modules.xml
+/.idea/inspectionProfiles/Project_Default.xml
+/.idea/VC1.iml
+/.idea/vcs.xml

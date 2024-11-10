@@ -22,6 +22,8 @@ from rich import print
 import time
 import requests
 import re
+import os
+from dotenv import load_dotenv
 
 # Define the ElevenLabsHandler class
 class ElevenLabsHandler:
@@ -156,7 +158,8 @@ class ElevenLabsHandler:
         
 # Tests
 if __name__ == "__main__":
-    el = ElevenLabsHandler("")
+    load_dotenv()
+    el = os.getenv("ELEVENLABS_API_KEY")
     text = "Hello, world!"
-    voice_id = ""
+    voice_id = os.getenv("ELEVENLABS_VOICE_ID")
     el.generate(text, voice_id)
