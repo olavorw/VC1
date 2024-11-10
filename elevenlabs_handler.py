@@ -163,4 +163,5 @@ if __name__ == "__main__":
     text = input(f"[green]ElevenLabsHandler was initialized successfully![/green]\n[yellow]Please enter the text to generate audio from:[/yellow]\n")
     voice_id = os.getenv("ELEVENLABS_VOICE_ID")
     file = el.generate(text, voice_id)
-    print(f"[green]Audio generated successfully![/green] [blue]{file}[/blue]")
+    print(f"[green]Audio generated successfully![/green] [blue]Opening {file}...[/blue]")
+    os.system(f"start {file}")
