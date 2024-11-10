@@ -159,7 +159,8 @@ class ElevenLabsHandler:
 # Tests
 if __name__ == "__main__":
     load_dotenv()
-    el = os.getenv("ELEVENLABS_API_KEY")
-    text = "Hello, world!"
+    el = ElevenLabsHandler(os.getenv("ELEVENLABS_API_KEY"))
+    text = input(f"[green]ElevenLabsHandler was initialized successfully![/green]\n[yellow]Please enter the text to generate audio from:[/yellow]\n")
     voice_id = os.getenv("ELEVENLABS_VOICE_ID")
-    el.generate(text, voice_id)
+    file = el.generate(text, voice_id)
+    print(f"[green]Audio generated successfully![/green] [blue]{file}[/blue]")
